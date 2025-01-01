@@ -1,0 +1,170 @@
+
+/*INFORMAÇÕES*/
+.informacoes {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.informacoes-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.informacoes h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var("--quartenary-color");
+    font-weight: 600;
+}
+
+.educacao-background {
+    height: 100%;
+    width: 50%;
+    background-image: url('../img/background-informacoes.svg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.educacao {
+    position: absolute;
+    margin-top: -350px;
+    margin-left: -50px;
+    display: flex;
+    padding: 70px;
+    flex-direction: column;
+    background-color: var(--quaternary-color); /* Ou outra cor desejada */
+    width: 35%;
+    height: 950px; /* Ajuste a altura conforme necessário */
+    border-radius: 30px;
+}
+
+.educacao h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+
+}
+
+.educacao-opcoes ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    gap: 20px;
+    width: 100%;
+    
+}
+
+.educacao-opcoes .ativo {
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+}
+
+.ano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color:var(--primary-color);
+}
+
+.ano:hover {
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+}
+
+.educacao-detalhes {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.educacao-detalhes article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.educacao-detalhes h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.educacao-detalhes span {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.educacao-detalhes p {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/*IDIOMAS*/
+
+.idiomas {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    gap: 20px;
+}
+
+.detalhes article {
+    color: var(--quaternary-color);
+    font-family: 'alexandria', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+}
+
+.detalhes h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.detalhes span {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.informacoes-pessoais {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 70vh;
+    gap: 100px;
+    justify-content: center;
+}

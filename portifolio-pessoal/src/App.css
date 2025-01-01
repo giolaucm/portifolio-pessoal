@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+.initial {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url('./componentes/img/background.png');
+    padding: 0 0 0 100px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Remove scroll horizontal */
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--quaternary-color);
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.resumo {
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    padding: 0 100px;
+    background-color: var(--background-color);
+}
+
+.informacoes {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+:root {
+    --primary-color: #331832;
+    --secondary-color: #662549;
+    --tertiary-color: #AE445A;
+    --quaternary-color: #F39F5A;
+    --quinary-color: #E6D6D7;
+    --background-color: #EDDFDE;
+
+    --primary-font: 'Alexandria', sans-serif;
+}
