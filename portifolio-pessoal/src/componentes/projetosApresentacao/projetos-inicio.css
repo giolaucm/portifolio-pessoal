@@ -1,0 +1,23 @@
+.projetos {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    background-image: url("../img/background-projects.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.apresentacao-projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.apresentacao-projetos h5 {
+    color: white;
+    font-weight: 400;
+}

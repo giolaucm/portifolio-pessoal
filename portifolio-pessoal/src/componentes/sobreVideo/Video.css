@@ -1,0 +1,45 @@
+.video {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--quaternary-color);
+    background-attachment: fixed; /* Fixa o fundo */
+    background-size: cover; /* Faz com que a imagem preencha o espaço */
+    background-position: center; /* Centraliza o fundo */
+    box-sizing: border-box;
+    overflow: hidden; /* Remove scroll horizontal */
+}
+
+.video-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 35%; /* Ajusta o tamanho do texto */
+    height: 100%;
+}
+
+
+.video-player {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player video {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px; /* Opcional: bordas arredondadas */
+    margin-right: 50px;
+}
+
+.video-player img {
+    width: 80%;
+    height: 80%;
+    margin-right: 60px;
+}

@@ -1,0 +1,18 @@
+
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+  }
+
+
+  .projetos-titulo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6rem;
+  }

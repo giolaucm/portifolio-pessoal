@@ -1,0 +1,33 @@
+.projetos-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.projetos-nav-btn {
+    font-family: var(--font-primary);
+    position: relative;
+    background: none;
+    padding: 10px 20px;
+    border: none;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 8px 0;
+    text-transform: uppercase;
+}
+
+.projetos-nav-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--quaternary-color); /* Cor da linha */
+    transition: width 0.3s ease-in-out;
+}
+
+.projetos-nav-btn:hover::before {
+    width: 100%;
+}
