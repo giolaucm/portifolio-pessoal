@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "empresa": "ScanDelivery",
+        "cargo": "Desenvolvedor Front-end",
+        "periodo": "2024 - Atualmente",
+        "descricao": "Desenvolvimento de interfaces modernas com React e TypeScript",
+        "atividades": [
+            "Implementação de novas funcionalidades",
+            "Otimização de performance",
+            "Colaboração com equipe de UX/UI"
+        ]
+    },
+    {
+        "id": 2,
+        "empresa": "Hackathons",
+        "cargo": "Participante/Desenvolvedor",
+        "periodo": "2023 - Presente",
+        "descricao": "Participação em competições de desenvolvimento intensivo",
+        "atividades": [
+            "Prototipagem rápida de soluções",
+            "Trabalho em equipe multidisciplinar",
+            "Desenvolvimento sob pressão"
+        ]
+    },
+    {
+        "id": 3,
+        "empresa": "TalkingCare",
+        "cargo": "Analista de Sistemas",
+        "periodo": "2022 - 2023",
+        "descricao": "Desenvolvimento de soluções para saúde mental hdhhdhhhhhhhh hhhhhhhhhhhhhhhhhhhh hhhhhhhssssssssssssssssss sssssssssssssss sshhhhhhhhhhb  dssssssjjjjjj",
+        "atividades": [
+            "Análise de requisitos",
+            "Modelagem de dados",
+            "Integração de APIs"
+        ]
+    },
+    {
+        "id": 4,
+        "empresa": "SOMOS Educação",
+        "cargo": "Suporte Técnico",
+        "periodo": "2020 - 2021",
+        "descricao": "Suporte a sistemas educacionais",
+        "atividades": [
+            "Atendimento ao usuário",
+            "Resolução de problemas técnicos",
+            "Documentação de processos"
+        ]
+    }
+]

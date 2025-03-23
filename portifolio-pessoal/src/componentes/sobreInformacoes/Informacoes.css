@@ -1,3 +1,5 @@
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css');
+
 
 /*INFORMAÇÕES*/
 .informacoes {
@@ -24,7 +26,7 @@
 
 .educacao-background {
     height: 100%;
-    width: 50%;
+    width: 55%;
     background-image: url('../img/background-informacoes.svg'); 
     background-size: cover;
     background-position: center;
@@ -38,17 +40,17 @@
 
 .educacao {
     position: absolute;
-    margin-top: -350px;
-    margin-left: -50px;
+    margin-top: -30%;
     display: flex;
     padding: 70px;
-    gap: 20px;
+    gap: 40px;
     flex-direction: column;
     background-color: var(--quaternary-color); /* Ou outra cor desejada */
-    width: 35%;
-    height: 950px; /* Ajuste a altura conforme necessário */
+    width: 50%;
+    height: auto; /* Ajuste a altura conforme necessário */
     border-radius: 30px;
 }
+
 
 .educacao h1 {
     font-size: 2.5rem;
@@ -58,15 +60,15 @@
 
 }
 
-.educacao-opcoes ul {
+.educacao-opcoes {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    flex-wrap: wrap;
+    height: auto;
     width: 100%;
-    
-}
-
-.educacao-opcoes .ativo {
+} 
+.educacao-opcoes .active {
     background-color: var(--primary-color);
     color: var(--quaternary-color);
 }
@@ -75,14 +77,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
-    height: 40px;
+    width: auto;
+    height: 60px;
     border: 2px solid var(--primary-color);
     border-radius: 50px;
     padding: 1rem;
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
+    flex-direction: row;
+    gap: 20px;
+    width: 100px;
+    background-color: transparent;
     color:var(--primary-color);
 }
 
@@ -93,16 +99,29 @@
 
 .educacao-detalhes {
     display: flex;
-    flex-direction: column;
     height: auto;
+    flex-wrap: wrap;
+}
+
+.educacao-detalhes-container {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.educacao-detalhes-container p {
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 .educacao-detalhes article {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    height: 80px;
+    justify-content: space-between;
+    height: auto;
+    gap: 10px;
+    width: 100%;
 }
 
 .educacao-detalhes h3 {
@@ -131,6 +150,7 @@
 .idiomas {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .detalhes {
@@ -140,23 +160,26 @@
     gap: 80px;
 }
 
-.detalhes article {
-    color: var(--quaternary-color);
+.detalhes .hobbie {
     display: flex;
     flex-direction: column;
     height: auto;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .detalhes h3 {
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--quaternary-color);
 }
 
 .detalhes span {
     font-size: 25px;
     font-weight: 300;
+    color: var(--quaternary-color);
 }
 
 .informacoes-pessoais {
@@ -166,4 +189,185 @@
     height: 70vh;
     gap: 100px;
     justify-content: center;
+}
+
+.hobbie-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.hobbie {
+    display: flex;
+    flex-direction: column;
+     gap: 10px;
+}
+
+.hobbies {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.hobbie i {
+    font-size: 4rem;
+    color: var(--quaternary-color);
+}
+
+@media (max-width: 1600px) {
+
+    .educacao-detalhes-container p {
+        font-size: 1.2rem;
+    }
+
+    .subtitulo {
+        font-size: 2rem;
+    }
+
+    .informacoes-pessoais {
+        gap: 50px;
+    }
+
+    .idiomas {
+        gap: 10px;
+    }
+
+    .hobbies {
+        gap: 10px;
+    }
+    .hobbie i {
+        font-size: 2rem;
+        color: var(--quaternary-color);
+    }
+
+    .hobbies p {
+        font-size: 1.8rem;
+    }
+
+    .idiomas p {
+        font-size: 1.8rem;
+    }    
+
+    .detalhes h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--quaternary-color);
+    }
+    
+    .detalhes span {
+        font-size: 1rem;;
+        font-weight: 300;
+        color: var(--quaternary-color);
+    }
+    
+    
+.educacao-detalhes h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.educacao-detalhes span {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.educacao-detalhes p {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.educacao-detalhes {
+    display: flex;
+    gap: 10px;
+}
+
+}
+
+@media (max-width: 1200px) {
+    .educacao-detalhes article {
+        height: auto;
+    }
+
+    .informacoes-pessoais {
+        width: 100%;
+        height: auto;
+        gap: 30px;
+    }
+    .detalhes h3 {
+        font-size: 1rem;
+    }
+    
+    .detalhes span {
+        font-size: 16px;
+    }
+
+    .educacao-detalhes span {
+        font-size: 0.8rem;
+    }
+
+    .educacao-detalhes p {
+        font-size: 1rem;
+    }
+
+    .educacao-detalhes h3 {
+        font-size: 1rem;
+        color: var(--primary-color);
+        font-weight: 700;
+        text-transform: uppercase;
+    
+    }
+
+    .informacoes {
+        height: auto;
+        padding: 20px;
+    }
+    .educacao-background {
+        width: 100%;
+        height: 100%;
+        background-image: none;
+    }
+
+    .educacao-opcoes {
+        display: flex;
+        gap: 20px;
+        height: auto;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: initial;
+        gap: 15px;
+    }
+
+    .educacao {
+        position: relative;
+        width: 100%;
+        height: 40%;
+        padding: 20px;
+        margin-top: 0;
+    }
+
+    .ano {
+        width: 70px;
+        height: 45px;
+        font-size: 0.8rem;
+    }
+
+    .informacoes-container {
+        
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .hobbie i {
+        font-size: 2rem;
+        color: var(--quaternary-color);
+    }
 }

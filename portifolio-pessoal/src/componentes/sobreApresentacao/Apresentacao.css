@@ -1,83 +1,292 @@
-.apresentacao {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    background-image: url("../img/background.png");
-}
-
-
-.apresentacao-titulo {
-    height: 50%;
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-.container-img {
-    display: flex;
-    width: 50%;
-    height: 100%;
-    justify-content: flex-end;
-    box-sizing: border-box;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Remove excesso de conteúdo */
-    margin-bottom: -130px;
-}
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: var(--primary-font);
+    line-height: 1.6;
+  }
+  
+  /* Espaço para o header fixo */
+  .paginaPadrao {
+    padding-top: 70px; /* Ajuste conforme a altura do seu header */
+  }
+  
+  .apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 50px 100px;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
 
-.apresentacao-imagem {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Remove comportamento inline */
-}
-
-.apresentacao-texto {
+  }
+  
+  /* Container Principal */
+  .apresentacao-titulo {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.apresentacao-texto a {
+    gap: 40px;
+  }
+  
+  /* Seção de Email e CV */
+  .apresentacao-cv {
     display: flex;
-    height: 70px;
-    width: 300px;
-    background-color: var(--primary-color);
-    justify-content: center;
     align-items: center;
-    text-decoration: none;
+    gap: 40px;
+    margin-bottom: 80px;
+    margin-top: 30px;
+  }
+  
+  #btn-email {
+    width: 40%;
     font-size: 25px;
-    font-weight: 500;
-    border-radius: 50px;
-    margin-top: 50px;
-}
-
-.apresentacao-redes {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+  }
+  
+  .btns {
     display: flex;
-    margin-top: 130px;
+    gap: 40px;
+  }
+  
+  #btn-saiba {
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    border: none;
+  }
+  
+  .linha {
+    width: 40px;
+    height: 1px;
+    background-color: var(--primary-color);
+  }
+  
+  /* Textos */
+  .apresentacao-texto h5 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .apresentacao-texto h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+  }
+  
+  .apresentacao-texto p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+  }
+
+  
+  /* Botão Saiba Mais */
+  #btn-saiba {
+    display: inline-block;
+    padding: 20px 50px;
+    font-size: 25px;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+  
+  /* Redes Sociais */
+  .apresentacao-redes {
+    display: flex;
     align-items: center;
     gap: 30px;
-    width: 60%;
-}
-
-.apresentacao-redes p {
-    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .apresentacao-redes p {
     font-size: 25px;
-}
-
-.apresentacao-redes .linha {
-    flex-grow: 1;
-    height: 1px;
-    width: 20%;
+  }
+  
+  /* Imagem */
+  .container-img {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .apresentacao-imagem {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+  
+  #btn-copy,
+  #btn-cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50px;
+    width: 100%;
+    height: 60px;
+  }
+  
+  #btn-copy {
+    border: solid 2px var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+  
+  #btn-cv {
     background-color: var(--primary-color);
-}
+    color: var(--quaternary-color);
+    border: solid 2px var(--primary-color);
+  }
+  
+  /* Responsividade */
 
-.apresentacao-redes i {
-    font-size: 30px;
-}
+  @media (max-width: 1600px) {
+  
+    .apresentacao-texto h1 {
+      font-size: 2rem;
+    }
+
+    .apresentacao-texto h5 {
+      font-size: 1rem;
+    }
+
+    #btn-email {
+      width: 50%;
+      margin: 0;
+      font-size: 1.3rem;
+      text-align: initial;
+    }
+
+    #btn-copy,
+    #btn-cv {
+      height: 20px;
+      font-size: 14px;
+      padding: 20px 25px;
+    }
+
+    #btn-saiba {
+      width: auto;
+      padding: 15px 30px;
+      height: 50px;
+      font-size: 1rem;
+    }
+
+    .apresentacao-redes p {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .apresentacao {
+      padding: 50px;
+    }
+  
+    .apresentacao-texto h1 {
+      font-size: 40px;
+      display: flex;
+      align-items: initial;
+    }
+
+    .apresentacao-redes a {
+      font-size: 20px;
+    }
+
+    .apresentacao-redes {
+      margin-bottom: 50px;
+    }
+
+    .apresentacao-texto h5 {
+      display: flex;
+      align-items: initial;
+    }
+    
+    .apresentacao-texto p {
+      display: flex;
+      text-align: initial;
+    }
+
+    .apresentacao-texto {
+      display: flex;
+      flex-direction: column;
+      justify-content: initial;
+    }
+    #btn-saiba {
+      width: 250px;
+      padding: 15px 30px;
+      height: 50px;
+      font-size: 1rem;
+    }
+
+    .apresentacao {
+      flex-direction: column;
+      padding: 100px 30px 50px;
+      text-align: center;
+    }
+  
+    .apresentacao-titulo,
+    .container-img {
+      width: 100%;
+      max-width: 600px;
+    }
+  
+    .apresentacao-cv {
+      flex-direction: row;
+      gap: 20px;
+      width: 100%;
+    }
+  
+    #btn-email {
+      width: 50%;
+      margin: 0;
+      font-size: 16px;
+      text-align: initial;
+    }
+
+
+    #btn-copy,
+    #btn-cv {
+      height: 20px;
+      font-size: 14px;
+      padding: 20px 25px;
+    }
+
+    .btns {
+      align-items: center;
+    }
+  
+    .apresentacao-redes {
+      justify-content: initial;
+    }
+
+    .apresentacao-redes p {
+      font-size: 20px;
+    }
+
+    .apresentacao-texto i {
+      font-size: 20px;
+    }
+  
+    .container-img {
+      order: -1;
+      margin-bottom: 50px;
+    }
+  
+    .apresentacao-imagem {
+      max-width: 400px;
+    }
+  }

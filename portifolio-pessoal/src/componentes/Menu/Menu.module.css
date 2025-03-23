@@ -1,72 +1,188 @@
-/* Estilos gerais do cabeçalho */
+/* Menu.module.css - Ajustado */
+
 .header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: auto;
   width: 100%;
-  padding: 50px 100px;
+  height: 70px; /* Altura fixa */
+  padding: 1rem 5%; /* Unidades relativas */
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
-/* Background específico para a rota "/" */
-.homeHeader {
-  background-image: url("../img/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;  
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 5%;
 }
 
-/* Background específico para a rota "/projetos" */
-.projetosHeader {
-  position: fixed;
-}
-
-
-/* Background específico para a rota "/blog" */
-.blogHeader {
-  background-color: white;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Background padrão para outras rotas */
-.defaultHeader {
-  background-color: #f5f5f5;
-}
-
-/* Estilos para a logo */
 .logo img {
-  max-height: 100%;
+  width: 3rem; /* Tamanho relativo */
+  max-width: 100%;
+  height: auto;
+  transition: width 0.3s ease;
 }
 
-/* Estilos para a barra de navegação */
 .navbar {
   display: flex;
-  border: 2px solid var(--quaternary-color);
-  justify-content: space-between;
-  border-radius: 50px;
-  height: 90px;
-  width: 980px;
-  overflow: hidden;
+  gap: 2rem;
+  align-items: center;
 }
 
-/* Estilos para a lista de navegação */
 .navbar ul {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  gap: 2rem;
   list-style: none;
-  padding: 0;
   margin: 0;
-  height: 100%;
+  padding: 0;
 }
 
-/* Estilos para os itens da lista */
-.navbar li {
-  flex: 1;
+.languageSelector {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.languageSelector:hover {
+  background: #f5f5f5;
+}
+
+.languageSelector img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.languageSelector select {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding-right: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Seta customizada */
+.languageSelector::after {
+  content: "▼";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--primary-color);
+  pointer-events: none;
+}
+
+/* Opções do dropdown */
+.languageSelector select option {
+  padding: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Mobile Styles */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.3rem;
+}
+
+/* Para navegadores WebKit */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .languageSelector select option {
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    padding-left: 40px;
+  }
+  
+  .languageSelector select option[value="pt"] {
+    background-image: url(../img/flags/brasil.png);
+    background-size: 24px;
+  }
+  
+  .languageSelector select option[value="en"] {
+    background-image: url(../img/flags/estados-unidos.png);
+    background-size: 24px;
+  }
+  
+  .languageSelector select option[value="es"] {
+    background-image: url(../img/flags/spain.png);
+    background-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+
+  .hamburger {
+    display: block;
+    z-index: 1001;
+    margin: 0;
+    width: 0;
+    color: var(--primary-color);
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    padding: 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem 5%;
+  }
+  
+  .logo img {
+    width: 5rem;
+  }
 }

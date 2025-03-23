@@ -15,7 +15,7 @@ function Video() {
       </div>
       <div className="video-player" data-aos="fade-left">
         <video src="https://www.youtube.com/watch?v=J8yVvUweA4c" controls></video>
-        <img src={Image} alt="play" className="play" />
+        <img src={Image} alt="background" className="video-background" />
       </div>
     </div>
   );

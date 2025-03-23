@@ -6,15 +6,18 @@
 }
 
 .blog-container {
+    flex-wrap: wrap;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     width: 100%;
+    background-color: var(--background-color);
+    
 }
 .blog-newsletter {
     width: 90%;
     border-radius: 30px;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,4 +71,8 @@ h6 {
     font-size: 20px;
     width: 500px;
     font-weight: 500;
+}
+
+.blog-posts {
+    width: 100%
 }

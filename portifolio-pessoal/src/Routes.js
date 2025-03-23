@@ -4,6 +4,8 @@ import Projetos from './pages/Projetos';
 import Blog from './pages/blog';
 import Menu from './componentes/Menu/Menu';
 import PaginaPadrao from './pages/PaginaPadrao/index';
+import ProjetosDetalhes from './pages/Projeto-details';
+import Contato from './pages/Contato';
 /*import Header from './componentes/header/header';
 import Apresentacao from './componentes/apresentacao-body/apresentacao';
 import Video from './componentes/video-sobre/video';
@@ -11,7 +13,6 @@ import Resumo from './componentes/resumo/Resumo';
 import Informacoes from './componentes/informacoes/informacoes';
 import ProjetosInicio from './componentes/projetos-inicio/projetos-inicio'; // Importando o componente de Projetos
 import ProjetosLista from './componentes/projetos-lista/projetos-lista';*/
-
 function App() {
   return (
 
@@ -20,7 +21,8 @@ function App() {
         <Route path="/" element={<PaginaPadrao />} >
           <Route index element={<SobreMim />} />
           <Route path="/projetos" element={<Projetos />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/projetos/:id" element={<ProjetosDetalhes />} />
+          <Route path="/contato" element={<Contato />} />
         </Route>
 
         

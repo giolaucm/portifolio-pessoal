@@ -12,9 +12,7 @@ function ProjetosLista() {
                 <p className="subtitulo themePurple">Meus projetos</p>
                 <NavegacaoProjetos />
             </div>
-            <div className="projetos-lista">
-                <Card />
-            </div>
+           
         </main>
     );
 }

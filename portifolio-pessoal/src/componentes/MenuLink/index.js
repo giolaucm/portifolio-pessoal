@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // Corrigido o import do NavLink para 'react-router-dom'
-import styles from './menuLink.module.css'; // Importação do CSS Module
+import { NavLink } from 'react-router-dom';
+import styles from './menuLink.module.css';
 
 function MenuLink({ to, label }) {
   return (

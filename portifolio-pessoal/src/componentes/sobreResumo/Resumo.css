@@ -7,21 +7,37 @@
 
 }
 
+.atividades {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'alexandria', sans-serif;
+}
+
+.atividades li {
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+
 .resumo-content {
     display: flex;
-    width: 100%;
-    flex-direction: row;
     justify-content: space-between;
-    gap: 300px;
 }
 
 ul {
     list-style: none;
     padding: 0;
+    width: auto;
 }
 
 ul li {
-    margin-bottom: 10px;
+    width: auto;   
 }
 
 ul li span {
@@ -56,27 +72,30 @@ ul li span {
 .experiencia {
     font-family: Arial, sans-serif;
     color: #fff;
-    width: 80%;  
+    width: 30%;  
     height: 70%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
 }
-
 
 .experiencia-container {
     display: flex;
-    height: 70%;
-    gap: 50px;
+    height: auto;
+    justify-content: space-between;
+    gap: 40px; 
+    width: 100%;
 }
 
 .experiencia-lista {
-    width: 40%;
+    width: 60%;
+    height: auto;
     background-color: var(--quinary-color);
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px 25px 40px 0;
 }
 
 .experiencia-lista ul {
@@ -85,13 +104,14 @@ ul li span {
 }
 
 .experiencia-lista li {
-    padding: 15px 10px 15px 40px; /* Ajuste aqui: aumente o padding-left */
+    padding: 15px 10px 15px 30px; /* Ajuste aqui: aumente o padding-left */
     cursor: pointer;
     color: #7a7a7a;
     border-left: 3px solid transparent;
     transition: 0.3s;
     font-weight: 500;
-    font-size: 35px;
+    font-family: 'alexandria', sans-serif;
+    font-size: 1.7rem;
 }
 
 .experiencia-lista li:hover,
@@ -109,20 +129,30 @@ ul li span {
 }
 
 .experiencia-detalhes {
-    width: 70%;
-    padding: 70px;
+    padding: 40px;
     border-radius: 30px;
     background-color: var(--quinary-color);
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    gap: 40px;
     justify-content: center;
+    flex-direction: column;
+    width: auto;
 }
 
-.experiencia-detalhes article {
+.experiencia-contain {
     display: flex;
-    flex-direction: row;
+    height: 100%;
     justify-content: space-between;
-    align-items: center;
+}
+
+.subtitulo-experiencia {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-family: var(--primary-font);
+    text-transform: uppercase;
+    width: auto;
+    font-weight: 600;
 }
 
 .experiencia-detalhes span {
@@ -130,23 +160,16 @@ ul li span {
     font-weight: 600;
     color: var(--quaternary-color);
     text-transform: uppercase;
+    width: auto;
 
 }
 
-.experiencia-detalhes h3 {
-    margin: 0;
-    color: var(--primary-color);
-    font-size: 30px;
-    font-family: var(--primary-font);
-    text-transform: uppercase;
-}
-
-.experiencia-detalhes p {
+.paragrafo-resumo {
     font-size: 25px;
-    margin-top: 50px;
     height: 40%;
     color: var(--primary-color);
-    font-weight: 400;
+    font-weight: 300;
+    box-sizing: border-box;
 }
 
 .descricao-experiencia {
@@ -161,10 +184,10 @@ ul li span {
 
 /* HABILIDADES TÉCNICAS */
 .habilidades-tecnicas {
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
 }
 
 
@@ -172,8 +195,6 @@ ul li span {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-width: 800px;
-    width: 100%;
 }
 
 
@@ -181,6 +202,7 @@ ul li span {
 .habilidades-icones {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -188,15 +210,15 @@ ul li span {
 .icone {
     font-family: 'alexandria', sans-serif;
     text-transform: uppercase;
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background-color: #f89d43;
     color: var(--primary-color);
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 8px;
     padding: 10px;
@@ -204,7 +226,7 @@ ul li span {
 }
 
 .icone i {
-    font-size: 2rem; /* Ajuste o tamanho dos ícones */
+    font-size: 1.3rem; /* Ajuste o tamanho dos ícones */
     color: var(--primary-color);   /* Ajuste a cor conforme necessário */
 }
 
@@ -227,22 +249,107 @@ ul li span {
     font-weight: 600;
 }
 
+@media (max-width: 1600px) {
+    .habilidades-tags {
+        margin-top: 20px;
+    }
+    
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .habilidades-icones {
-        flex-wrap: wrap;
-        gap: 15px;
+    .experiencia-lista {
+        width: 100%;
+    }
+    .experiencia-lista li {
+        font-size: 1rem;
     }
 
-    .icone {
-        width: 50px;
-        height: 50px;
-        font-size: 12px;
+    .subtitulo-experiencia {
+        font-size: 1rem;
+    }
+    
+    .experiencia-detalhes span {
+        font-size: 1rem;
+    
+    }
+    
+    .paragrafo-resumo {
+        font-size: 1rem;
+    }
+
+    .subtitulo2 {
+        font-size: 1rem;
+    }
+
+    .atividades li {
+        padding: 10px;
+        font-size: 0.5rem;
+    }
+
+    .experiencia {
+        width: 18%;
+    }
+
+    .habilidades-tecnicas {
+        width: 38%;
     }
 
     .habilidades-tags span {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .atividades {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .experiencia {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .experiencia-detalhes {
+        width: 100%;
+        height: auto;
+    }
+
+    .experiencia-lista {
+        width: 100%;
+        height: auto;
+        background-color: var(--quinary-color);
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 20px 20px 0;
+    }
+
+    .experiencia-container {
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+    }
+
+    .resumo-content {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .habilidades-tecnicas {
+        width: 100%;
+    }
+
+    .habilidades-tags span {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: var(--quaternary-color);
+        padding: 15px 25px;
+        border-radius: 30px;
         font-size: 12px;
-        padding: 8px 15px;
+        font-weight: 600;
     }
 }

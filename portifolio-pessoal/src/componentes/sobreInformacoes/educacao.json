@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "course": "Curso de React",
+        "initialDate": "2021-03-01",
+        "endDate": "2021-12-15",
+        "description": "Curso avançado de React Hooks e Context API"
+    },
+    {
+        "id": 2,
+        "course": "Curso de JavaScript",
+        "initialDate": "2020-01-10",
+        "endDate": "2020-11-20",
+        "description": "JavaScript moderno ES6+"
+    }
+]

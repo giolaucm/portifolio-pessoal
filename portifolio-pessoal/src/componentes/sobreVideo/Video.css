@@ -1,45 +1,136 @@
+/* Estilos para o container principal */
 .video {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--quaternary-color);
-    background-attachment: fixed; /* Fixa o fundo */
-    background-size: cover; /* Faz com que a imagem preencha o espaço */
-    background-position: center; /* Centraliza o fundo */
+    padding: 50px 100px;
     box-sizing: border-box;
     overflow: hidden; /* Remove scroll horizontal */
-}
-
-.video-text {
+    position: relative; /* Permite posicionamento absoluto do background */
+  }
+  
+  /* Estilos para o texto */
+  .video-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     width: 35%; /* Ajusta o tamanho do texto */
-    height: 100%;
-}
-
-
-.video-player {
+    z-index: 2; /* Garante que o texto fique acima do background */
+  }
+  
+  .video-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .video-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Estilos para o player de vídeo */
+  .video-player {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.video-player video {
+    position: relative;
+  }
+  
+  .video-player video {
     width: 80%;
     height: 80%;
     object-fit: cover;
     display: block;
-    border-radius: 20px; /* Opcional: bordas arredondadas */
+    border-radius: 20px; /* Bordas arredondadas */
     margin-right: 50px;
-}
+    z-index: 2; /* Garante que o vídeo fique acima do background */
+  }
+  
+  /* Estilos para o background do vídeo */
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 90%; /* Mantém a proporção original */
+    height: 80%; /* Mantém a proporção original */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    z-index: 1; /* Coloca o background atrás do vídeo */
+    margin-right: 60px; /* Mantém o espaçamento original */
+  }
+  
+  /* Responsividade */
+  @media (max-width: 1200px) {
+    .video {
+      padding: 50px;
+    }
+  
+    .video-text {
+      width: 45%;
+    }
+  
+    .video-player {
+      width: 50%;
+    }
 
-.video-player img {
-    width: 80%;
-    height: 80%;
-    margin-right: 60px;
-}
+  }
+  
+  @media (max-width: 992px) {
+    .video {
+      flex-direction: column;
+      gap: 40px;
+      padding: 50px 30px;
+    }
+  
+    .video-text,
+    .video-player {
+      width: 100%;
+      max-width: 800px;
+    }
+  
+    .video-player video {
+      height: 300px;
+    }
+  
+    .video-background {
+      width: 100%;
+      height: auto;
+      margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .video {
+      padding: 30px 20px;
+    }
+  
+    .video-text h2 {
+      font-size: 1.5rem;
+    }
+  
+    .video-text p {
+      font-size: 1rem;
+    }
+  
+    .video-player video {
+      height: 250px;
+    }
+  
+    .video-background {
+      width: 100%;
+      height: auto;
+    }
+
+    .video-background {
+        top: 0;
+        left: 55%;
+        width: 85%; /* Mantém a proporção original */
+        height: 75%; /* Mantém a proporção original */
+        object-fit: contain; /* Mantém a proporção da imagem */
+        z-index: 1; /* Coloca o background atrás do vídeo */
+        margin-right: 60px; /* Mantém o espaçamento original */
+      }
+  }

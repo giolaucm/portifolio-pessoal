@@ -1,0 +1,74 @@
+.blog-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-card {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Coluna para empilhar elementos */
+    justify-content: flex-end; /* Alinhar conteúdo no final */
+    width: 700px; /* Ajustar tamanho */
+    height: 800px;
+    border-radius: 8px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #000; /* Cor padrão */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Suavizar sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Intensificar sombra */
+}
+
+.blog-card-image {
+    width: 100%; /* Largura total do cartão */
+    height: 100%; /* Ajustar altura da imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card-content {
+    background: #fff; /* Fundo branco */
+    border-radius: 0 0 8px 8px; /* Arredondar somente parte inferior */
+    padding: 20px;
+    text-align: left; /* Alinhar texto à esquerda */
+    width: 100%; /* Ocupa toda a largura */
+    height: 200px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-date {
+    font-size: 20px;
+    font-weight: 600;
+    color: white; /* Cor escura para contraste */
+    background-color: var(--primary-color); /* Cor principal */
+    padding: 16px 24px; /* Espaçamento interno */
+
+    width: 100px;
+    border-radius: 50px; /* Arredondar bordas */
+}
+
+.blog-card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primary-color); /* Cor escura para contraste */
+}
+
+.blog-card-description {
+    font-size: 24px;
+    color: var(--primary-color); /* Tom intermediário */
+}
+
+.blog-card-image {
+    padding: 25px;
+}

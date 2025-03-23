@@ -1,34 +1,57 @@
-/* MenuLink.module.css */
-
 /* Estilos para os links individuais */
 .link {
-    color: var(--quaternary-color);
-    font-family: var(--primary-font);
-    text-align: center;
-    font-weight: 400;
-    text-decoration: none;
-    font-size: 25px;
-    display: flex;
-    align-items: center; /* Alinha verticalmente o texto */
-    justify-content: center; /* Centraliza horizontalmente o texto */
-    width: 100%; /* Adapta à largura do li */
-    height: 100%; /* Garante que o link não ultrapasse a altura do navbar */
-    border-radius: 50px;
-    transition: background-color 0.3s ease; /* Transição suave no hover */
-    box-sizing: border-box;
+  color: var(--primary-color);
+  font-family: var(--primary-font);
+  text-align: center;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: clamp(1rem, 1vw, 1rem); /* Tamanho responsivo */
+  padding: 0.8rem 1.6rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: 50px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+
+.link::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url("../img/navegador.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: var(--primary); /* Cor padrão */
+}
+
+.link.active::after {
+  color: var(--quartenary); /* Cor ao ativar */
+}
+
+
+
+/* Estilo do link quando em hover */
+.link:hover {
+  color: var(--quaternary-color);
+  font-weight: 400;
+}
+
+/* Estilo do link quando ativo */
+.active {
+  color: var(--quaternary-color);
+  font-weight: 400;
+}
+
+
+@media (max-width: 768px) {
+  .link {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    justify-content: flex-start;
   }
-  
-  /* Estilo do link quando em hover */
-  .link:hover {
-    background-color: var(--quaternary-color);
-    color: white;
-    font-weight: 400;
-  }
-  
-  /* Estilo do link quando ativo */
-  .active {
-    background-color: var(--quaternary-color);
-    color: white;
-    font-weight: 400;
-  }
-  
+}

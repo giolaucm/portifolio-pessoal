@@ -1,33 +1,121 @@
+/* Navegação */
 .projetos-nav {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
 }
 
 .projetos-nav-btn {
     font-family: var(--font-primary);
     position: relative;
     background: none;
-    padding: 10px 20px;
     border: none;
-    font-size: 30px;
+    font-size: clamp(1.2rem, 2.5vw, 1.875rem);
     font-weight: 500;
     cursor: pointer;
     color: var(--primary-color);
-    padding: 8px 0;
     text-transform: uppercase;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
 }
 
-.projetos-nav-btn::before {
+/* Efeito da linha inferior RESTAURADO */
+.projetos-nav-btn.ativo::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--quaternary-color); /* Cor da linha */
-    transition: width 0.3s ease-in-out;
+    width: 100%;
+    height: 3px;
+    background-color: var(--quaternary-color);
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
 }
 
-.projetos-nav-btn:hover::before {
-    width: 100%;
+/* Efeito hover RESTAURADO */
+.projetos-nav-btn:hover,
+.projetos-nav-btn.ativo {
+    color: var(--quaternary-color);
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 5%;
+    box-sizing: border-box;
+}
+
+.projeto-card {
+    flex: 0 1 calc(33.333% - 4rem);
+    min-width: 300px;
+    max-width: 500px;
+    height: 450px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.3s;
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito hover mantido */
+.projeto-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .projeto-card {
+        flex-basis: calc(50% - 4rem);
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos-nav-btn {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .cards-container {
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .projeto-card {
+        flex-basis: 100%;
+        height: 400px;
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projetos-nav {
+        gap: 0.5rem;
+        flex-direction: row;
+
+    }
+    
+    .projetos-nav-btn {
+        font-size: 1rem;
+        padding: 0.5rem;
+        margin: 0 0.2rem;
+    }
+    
+    .projeto-card {
+        height: 350px;
+        padding: 1.5rem;
+    }
 }

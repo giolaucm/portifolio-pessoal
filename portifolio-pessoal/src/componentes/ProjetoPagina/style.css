@@ -1,0 +1,9 @@
+.projeto-container {
+    display: flex;
+    flex-direction: row;
+    padding: 200px 100px;
+    width: auto;
+    justify-content: center;
+    gap: 50px;
+    background-color: var(--background-color);
+}
