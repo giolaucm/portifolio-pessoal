@@ -10,13 +10,13 @@
     height: 100vh;
     gap: 2rem;
     background-color: var(--background-color);
+    background-image: url('../img/background-resumo.svg');
     padding: 2rem;
 }
 
 .text {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 500;
-    margin: 1rem 0;
     color: var(--quaternary-color);
 }
 
@@ -64,7 +64,6 @@
     font-size: 1.8rem;
     color: var(--primary-color);
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 .form-group {
@@ -170,6 +169,14 @@ form {
     width: 100%;
 }
 
+@media screen and (max-width: 1600px) {
+    .text {
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--quaternary-color);
+    }
+    
+}
 @media screen and (max-width: 1024px) {
     .forms-container {
         flex-direction: column;
@@ -188,7 +195,7 @@ form {
 
 
     }
-
+ 
     .forms-titulo {
         width: 90%;
     }

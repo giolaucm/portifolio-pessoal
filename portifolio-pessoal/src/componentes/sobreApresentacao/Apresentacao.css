@@ -270,7 +270,7 @@
     }
   
     .apresentacao-redes {
-      justify-content: initial;
+      width: 100%;
     }
 
     .apresentacao-redes p {

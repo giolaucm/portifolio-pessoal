@@ -250,6 +250,11 @@ ul li span {
 }
 
 @media (max-width: 1600px) {
+
+    .atividades li {
+        border-radius: 15px;
+    }
+
     .habilidades-tags {
         margin-top: 20px;
     }
@@ -281,7 +286,7 @@ ul li span {
 
     .atividades li {
         padding: 10px;
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     .experiencia {
@@ -294,7 +299,7 @@ ul li span {
 
     .habilidades-tags span {
         padding: 15px 25px;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
 

@@ -8,6 +8,7 @@
     box-sizing: border-box;
     overflow: hidden; /* Remove scroll horizontal */
     position: relative; /* Permite posicionamento absoluto do background */
+    height: 100%;
   }
   
   /* Estilos para o texto */
@@ -42,7 +43,7 @@
   
   .video-player video {
     width: 80%;
-    height: 80%;
+    height: 70%;
     object-fit: cover;
     display: block;
     border-radius: 20px; /* Bordas arredondadas */
@@ -63,6 +64,13 @@
   }
   
   /* Responsividade */
+  @media (max-width: 1600px) {
+    .video {
+      padding: 50px 80px;  
+      align-items: center;
+    }
+  }
+
   @media (max-width: 1200px) {
     .video {
       padding: 50px;

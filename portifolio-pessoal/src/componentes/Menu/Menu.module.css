@@ -10,7 +10,7 @@
   align-items: center;
   width: 100%;
   height: 70px; /* Altura fixa */
-  padding: 1rem 5%; /* Unidades relativas */
+  padding: 1rem 6%; /* Unidades relativas */
   transition: all 0.3s ease;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,6 @@
 
 .logo img {
   width: 3rem; /* Tamanho relativo */
-  max-width: 100%;
   height: auto;
   transition: width 0.3s ease;
 }
@@ -133,10 +132,13 @@
   }
 }
 
+
 @media (max-width: 768px) {
+
+
   .logo img {
-    width: 3rem;
-    height: 3rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
   
 
