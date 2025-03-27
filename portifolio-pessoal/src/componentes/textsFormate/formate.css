@@ -106,13 +106,13 @@ body {
     opacity: 10%;
   }
   
-  .category,
-  .status {
+ 
+  .category, .status {
     display: flex;
-    padding: 20px 30px;
+    padding: 8px 14px;
     border: none;
     border-radius: 35px;
-    font-size: 20px;
+    font-size: 10 px;
     font-weight: 400;
     font-family: var(--font-primary);
     justify-content: center;
@@ -120,8 +120,8 @@ body {
     width: auto;
     text-decoration: none;
   }
-  
-  .category {
+
+  .category  {
     background-color: #ffe8d6;
     color: var(--quaternary-color);
   }
@@ -169,6 +169,10 @@ body {
   
     .subtitulo {
       font-size: 35px;
+    }
+
+    .publiText {
+      font-size: 1.2rem;
     }
     
   }

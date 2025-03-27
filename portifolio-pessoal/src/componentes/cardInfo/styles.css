@@ -63,10 +63,10 @@
 
 .link {
     width: auto;
-    padding: 20px 30px;
+    padding: 10px 18px;
     border: none;
     border-radius: 35px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     justify-content: center;
     align-items: center;
@@ -123,7 +123,7 @@
 .info-projeto {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0px;
 }
 
 
@@ -145,14 +145,22 @@
 .acess-button, .share-button {
     display: flex;
     color: var(--primary-color);
-    padding: 20px 30px;
+    padding: 16px 25px;
     border-radius: 35px;
-    font-size: 25px;
+    font-size: 1rem;
+    text-decoration: none;
     font-weight: 400;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: auto;
+    width: 100%;
+}
+
+.info-acess {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
 .acess-button {
@@ -201,8 +209,253 @@
     font-weight: 300;
 }*/
 
-.info-acess {
+/* Fundo escuro ao abrir o modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.publiText {
+    color: var(--primary-color);
+  }
+
+/* Área do modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    align-items: center;
+}
+
+/* Botão para fechar o modal */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: url("../img/knitting.svg");
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* Estilos existentes permanecem iguais */
+
+/* Novos estilos para o carrossel */
+/* Estilos anteriores permanecem iguais */
+
+/* Adicione estas novas regras para o carrossel */
+.carrossel-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding-bottom: 15px;
+    cursor: grab;
+    user-select: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    height: 5px;
+}
+
+.carrossel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.carrossel::-webkit-scrollbar-thumb {
+    background: var(--quaternary-color);
+    border-radius: 10px;
+}
+
+.carrossel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.carrossel-item:hover {
+    transform: scale(1.02);
+}
+
+.carrossel-img {
+    width: auto;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.ver-todas-btn {
+    position: absolute;
+    bottom: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    height: 50px;
+    left: 30px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.ver-todas-btn:hover {
+    background-color: #3a0ca3;
+    transform: translateY(-2px);
+}
+
+/* Atualizações no modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-img {
+    max-height: 70vh;
+    max-width: 85%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: #333;
+    border: none;
+    font-size: 50px;
+    font-weight: 300;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button.prev {
+    left: 30px;
+}
+
+.carousel-button.next {
+    right: 30px;
+}
+
+.image-counter {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+}
+
+@media screen and (max-width: 1600px) {
+    
+}
+@media screen and (max-width: 768px) {
+    .carrossel-item {
+        width: 90%;
+    }
+    
+    .carrossel-img {
+        height: 300px;
+    }
+    
+    .ver-todas-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }

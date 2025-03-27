@@ -2,13 +2,18 @@
   {
     "id": 1,
     "nome": "Blue",
-    "desenvolvedores": ["Gabriel", "Lucas", "Rafael", "Rafaela"],
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna"
+      }
+    ],
     "link": "https://talkingcare.herokuapp.com/",
-    "descricao": "Plataforma de telemedicina para consultas médicas online",
+    "descricao": "Plataforma de telemedicina para consultas médicas online.",
     "figma": "https://www.figma.com/proto/talkingcare",
     "github": "https://github.com/talkingcare",
     "tecnologias": ["React", "Node.js", "MongoDB"],
-    "categoria": ["Hackathons", "Design", "Dashboards"],
+    "categoria": "Hackathons",
     "imagens": ["talkingcare1.png", "talkingcare2.png", "talkingcare3.png"],
     "video": "https://www.youtube.com/watch?v=3Q3wZQd7J2Y",
     "status": "Concluído"
@@ -16,23 +21,53 @@
   {
     "id": 2,
     "nome": "PerifaCria",
-    "desenvolvedores": ["Pedro", "Laura", "Giovanna", "Sthefany"],
+    "desenvolvedores": [
+      {
+        "nome": "Pedro",
+        "linkedin": "https://www.linkedin.com/in/pedro"
+      },
+      {
+        "nome": "Laura",
+        "linkedin": "https://www.linkedin.com/in/laura"
+      },
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna"
+      },
+      {
+        "nome": "Sthefany",
+        "linkedin": "https://www.linkedin.com/in/sthefany"
+      }
+    ],
     "link": "https://fittrack.app/",
-    "descricao": "Aplicativo para rastreamento de treinos e nutrição personalizada",
+    "descricao": "Aplicativo para rastreamento de treinos e nutrição personalizada.",
     "figma": "https://www.figma.com/proto/fittrack",
     "github": "https://github.com/fittrack-app",
     "tecnologias": ["Flutter", "Firebase", "Node.js"],
     "categoria": "Hackathons",
     "imagens": ["fittrack1.png", "fittrack2.png", "fittrack3.png"],
     "video": "https://www.youtube.com/watch?v=abcdef12345",
-    "status": "Em desenvolvimento"
+    "status": "Concluído"
   },
   {
     "id": 3,
     "nome": "Avanti",
-    "desenvolvedores": ["Pedro", "Mariana", "Felipe"],
+    "desenvolvedores": [
+      {
+        "nome": "Christian",
+        "linkedin": "https://www.linkedin.com/in/christian"
+      },
+      {
+        "nome": "Wesley",
+        "linkedin": "https://www.linkedin.com/in/wesley"
+      },
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna"
+      }
+    ],
     "link": "https://educonnect.io/",
-    "descricao": "Plataforma de ensino online com aulas interativas e gamificação",
+    "descricao": "Plataforma de ensino online com aulas interativas e gamificação.",
     "figma": "https://www.figma.com/proto/educonnect",
     "github": "https://github.com/educonnect",
     "tecnologias": ["Vue.js", "Django", "PostgreSQL"],
@@ -44,9 +79,22 @@
   {
     "id": 4,
     "nome": "Elara",
-    "desenvolvedores": ["Julia", "Leonardo", "Sofia"],
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna"
+      },
+      {
+        "nome": "Milena",
+        "linkedin": "https://www.linkedin.com/in/milena"
+      },
+      {
+        "nome": "Laura",
+        "linkedin": "https://www.linkedin.com/in/laura"
+      }
+    ],
     "link": "https://greenway.eco/",
-    "descricao": "Aplicativo para rastreamento de pegada de carbono e consumo sustentável",
+    "descricao": "Aplicativo para rastreamento de pegada de carbono e consumo sustentável.",
     "figma": "https://www.figma.com/proto/greenway",
     "github": "https://github.com/greenway-app",
     "tecnologias": ["React Native", "Node.js", "MongoDB"],
@@ -58,37 +106,14 @@
   {
     "id": 5,
     "nome": "Entre Sonhos e Realidades",
-    "desenvolvedores": ["Carlos", "Fernanda", "Rodrigo"],
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna-carvalho-de-moraes-964a8a191/"
+      }
+    ],
     "link": "https://safehome.io/",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA",
-    "figma": "https://www.figma.com/proto/safehome",
-    "github": "https://github.com/safehome",
-    "tecnologias": ["Angular", "Python", "TensorFlow"],
-    "categoria": "Code",
-    "imagens": ["safehome1.png", "safehome2.png", "safehome3.png"],
-    "video": "https://www.youtube.com/watch?v=safehome_demo",
-    "status": "Em desenvolvimento"
-  },
-  {
-    "id": 6,
-    "nome": "FichaChef",
-    "desenvolvedores": ["Carlos", "Fernanda", "Rodrigo"],
-    "link": "https://safehome.io/",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA",
-    "figma": "https://www.figma.com/proto/safehome",
-    "github": "https://github.com/safehome",
-    "tecnologias": ["Angular", "Python", "TensorFlow"],
-    "categoria": "Code",
-    "imagens": ["safehome1.png", "safehome2.png", "safehome3.png"],
-    "video": "https://www.youtube.com/watch?v=safehome_demo",
-    "status": "Em desenvolvimento"
-  },
-  {
-    "id":7,
-    "nome": "Portifólio Pessoal",
-    "desenvolvedores": ["Giovanna"],
-    "link": "https://safehome.io/",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA",
+    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
     "figma": "https://www.figma.com/proto/safehome",
     "github": "https://github.com/safehome",
     "tecnologias": ["Angular", "Python", "TensorFlow"],
