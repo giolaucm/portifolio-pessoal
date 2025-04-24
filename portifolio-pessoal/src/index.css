@@ -32,7 +32,7 @@ body {
 }
 
 .initial {
-  height: 100vh;
+  height: 100%;
   background-image: url('./componentes/img/background.png');
   background-size: cover;
   background-position: center;

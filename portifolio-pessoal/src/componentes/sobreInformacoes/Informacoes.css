@@ -1,7 +1,6 @@
 @import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css');
 
-
-/*INFORMAÇÕES*/
+/* INFORMAÇÕES */
 .informacoes {
     display: flex;
     height: 70vh;
@@ -14,16 +13,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
 }
 
 .informacoes h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var("--quartenary-color");
+    color: var(--quaternary-color);
     font-weight: 600;
 }
 
+/* BACKGROUND EDUCAÇÃO */
 .educacao-background {
     height: 100%;
     width: 55%;
@@ -34,50 +33,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-
+/* BOX EDUCAÇÃO */
 .educacao {
     position: absolute;
-    margin-top: -30%;
+    margin-top: -20%;
     display: flex;
     padding: 70px;
     gap: 40px;
     flex-direction: column;
-    background-color: var(--quaternary-color); /* Ou outra cor desejada */
+    background-color: var(--quaternary-color);
     width: 50%;
-    height: auto; /* Ajuste a altura conforme necessário */
+    height: auto;
     border-radius: 30px;
 }
-
 
 .educacao h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
     font-weight: 600;
-
 }
 
 .educacao-opcoes {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
-    flex-wrap: wrap;
-    height: auto;
     width: 100%;
-} 
+}
+
 .educacao-opcoes .active {
     background-color: var(--primary-color);
     color: var(--quaternary-color);
 }
 
+/* ANOS */
 .ano {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
+    width: 100px;
     height: 60px;
     border: 2px solid var(--primary-color);
     border-radius: 50px;
@@ -85,11 +82,9 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
-    flex-direction: row;
-    gap: 20px;
-    width: 100px;
     background-color: transparent;
-    color:var(--primary-color);
+    color: var(--primary-color);
+    gap: 20px;
 }
 
 .ano:hover {
@@ -97,21 +92,24 @@
     color: var(--quaternary-color);
 }
 
+/* DETALHES EDUCAÇÃO */
 .educacao-detalhes {
     display: flex;
-    height: auto;
     flex-wrap: wrap;
+    height: auto;
+    gap: 10px;
 }
 
 .educacao-detalhes-container {
     display: flex;
-    gap: 25px;
     flex-direction: column;
+    gap: 25px;
 }
 
 .educacao-detalhes-container p {
     color: var(--primary-color);
     font-weight: 500;
+    font-size: 1.5rem;
 }
 
 .educacao-detalhes article {
@@ -119,7 +117,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: auto;
     gap: 10px;
     width: 100%;
 }
@@ -129,7 +126,6 @@
     color: var(--primary-color);
     font-weight: 700;
     text-transform: uppercase;
-
 }
 
 .educacao-detalhes span {
@@ -139,20 +135,14 @@
     text-transform: uppercase;
 }
 
-.educacao-detalhes p {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-/*IDIOMAS*/
-
+/* IDIOMAS */
 .idiomas {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* DETALHES PESSOAIS */
 .detalhes {
     display: flex;
     flex-direction: row;
@@ -191,6 +181,7 @@
     justify-content: center;
 }
 
+/* HOBBIES */
 .hobbie-container {
     display: flex;
     flex-direction: column;
@@ -198,17 +189,16 @@
     width: 100%;
 }
 
-
 .hobbie {
     display: flex;
     flex-direction: column;
-     gap: 10px;
+    gap: 10px;
 }
 
 .hobbies {
     display: flex;
-    gap: 20px;
     flex-direction: column;
+    gap: 20px;
 }
 
 .hobbie i {
@@ -216,120 +206,45 @@
     color: var(--quaternary-color);
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 1600px) {
+    .educacao-detalhes-container p { font-size: 1.2rem; }
+    .subtitulo { font-size: 2rem; }
+    .informacoes-pessoais { gap: 50px; }
+    .idiomas { gap: 10px; }
+    .hobbies { gap: 10px; }
+    .hobbie i { font-size: 2rem; }
+    .hobbies p, .idiomas p { font-size: 1.8rem; }
 
-    .educacao-detalhes-container p {
-        font-size: 1.2rem;
-    }
+    .detalhes h3 { font-size: 1.2rem; }
+    .detalhes span { font-size: 1rem; }
 
-    .subtitulo {
-        font-size: 2rem;
-    }
-
-    .informacoes-pessoais {
-        gap: 50px;
-    }
-
-    .idiomas {
-        gap: 10px;
-    }
-
-    .hobbies {
-        gap: 10px;
-    }
-    .hobbie i {
-        font-size: 2rem;
-        color: var(--quaternary-color);
-    }
-
-    .hobbies p {
-        font-size: 1.8rem;
-    }
-
-    .idiomas p {
-        font-size: 1.8rem;
-    }    
-
-    .detalhes h3 {
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--quaternary-color);
-    }
-    
-    .detalhes span {
-        font-size: 1rem;;
-        font-weight: 300;
-        color: var(--quaternary-color);
-    }
-    
-    
-.educacao-detalhes h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    text-transform: uppercase;
-
-}
-
-.educacao-detalhes span {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.educacao-detalhes p {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.educacao-detalhes {
-    display: flex;
-    gap: 10px;
-}
-
+    .educacao-detalhes h3 { font-size: 1.5rem; }
+    .educacao-detalhes span { font-size: 1rem; }
+    .educacao-detalhes p { font-size: 1.2rem; }
 }
 
 @media (max-width: 1200px) {
-    .educacao-detalhes article {
-        height: auto;
-    }
+    .educacao-detalhes article { height: auto; }
 
     .informacoes-pessoais {
         width: 100%;
         height: auto;
         gap: 30px;
     }
-    .detalhes h3 {
-        font-size: 1rem;
-    }
-    
-    .detalhes span {
-        font-size: 16px;
-    }
 
-    .educacao-detalhes span {
-        font-size: 0.8rem;
-    }
+    .detalhes h3 { font-size: 1rem; }
+    .detalhes span { font-size: 16px; }
 
-    .educacao-detalhes p {
-        font-size: 1rem;
-    }
-
-    .educacao-detalhes h3 {
-        font-size: 1rem;
-        color: var(--primary-color);
-        font-weight: 700;
-        text-transform: uppercase;
-    
-    }
+    .educacao-detalhes span { font-size: 0.8rem; }
+    .educacao-detalhes p { font-size: 1rem; }
+    .educacao-detalhes h3 { font-size: 1rem; }
 
     .informacoes {
         height: auto;
         padding: 20px;
     }
+
     .educacao-background {
         width: 100%;
         height: 100%;
@@ -338,18 +253,17 @@
 
     .educacao-opcoes {
         display: flex;
-        gap: 20px;
+        gap: 15px;
         height: auto;
         width: 100%;
         flex-wrap: wrap;
         justify-content: initial;
-        gap: 15px;
     }
 
     .educacao {
         position: relative;
         width: 100%;
-        height: 40%;
+        height: auto;
         padding: 20px;
         margin-top: 0;
     }
@@ -361,13 +275,11 @@
     }
 
     .informacoes-container {
-        
         flex-direction: column;
         gap: 35px;
     }
 
     .hobbie i {
         font-size: 2rem;
-        color: var(--quaternary-color);
     }
 }

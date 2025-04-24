@@ -6,16 +6,33 @@
       {
         "nome": "Giovanna",
         "linkedin": "https://www.linkedin.com/in/giovanna"
+      },
+      {
+        "nome": "Alan",
+        "linkedin": "https://www.linkedin.com/in/milena"
+      },
+      {
+        "nome": "Sthefany",
+        "linkedin": "https://www.linkedin.com/in/laura"
+      },
+      {
+        "nome": "Andrey",
+        "linkedin": "https://www.linkedin.com/in/sthefany"
+      },
+      {
+        "nome": "Willy",
+        "linkedin": "https://www.linkedin.com/in/giovanna"
       }
     ],
-    "link": "https://talkingcare.herokuapp.com/",
+    "link": null,
     "descricao": "Plataforma de telemedicina para consultas médicas online.",
     "figma": "https://www.figma.com/proto/talkingcare",
     "github": "https://github.com/talkingcare",
     "tecnologias": ["React", "Node.js", "MongoDB"],
     "categoria": "Hackathons",
-    "imagens": ["talkingcare1.png", "talkingcare2.png", "talkingcare3.png"],
-    "video": "https://www.youtube.com/watch?v=3Q3wZQd7J2Y",
+    "img1": "talkingcare1.png",
+    "img2": "talkingcare2.png",
+    "img3": "talkingcare3.png",
     "status": "Concluído"
   },
   {
@@ -28,7 +45,7 @@
       },
       {
         "nome": "Laura",
-        "linkedin": "https://www.linkedin.com/in/laura"
+        "linkedin": "https://www.linkedin.com/in/laura-carvalho-de-moraes-4149b62b7/"
       },
       {
         "nome": "Giovanna",
@@ -45,8 +62,10 @@
     "github": "https://github.com/fittrack-app",
     "tecnologias": ["Flutter", "Firebase", "Node.js"],
     "categoria": "Hackathons",
-    "imagens": ["fittrack1.png", "fittrack2.png", "fittrack3.png"],
-    "video": "https://www.youtube.com/watch?v=abcdef12345",
+    "img1": "fittrack1.png",
+    "img2": "fittrack2.png",
+    "img3": "fittrack3.png",
+    "video": "https://www.youtube.com/watch?v=4acOsD8gQqQ",
     "status": "Concluído"
   },
   {
@@ -55,25 +74,26 @@
     "desenvolvedores": [
       {
         "nome": "Christian",
-        "linkedin": "https://www.linkedin.com/in/christian"
+        "linkedin": null
       },
       {
         "nome": "Wesley",
-        "linkedin": "https://www.linkedin.com/in/wesley"
+        "linkedin": null
       },
       {
         "nome": "Giovanna",
         "linkedin": "https://www.linkedin.com/in/giovanna"
       }
     ],
-    "link": "https://educonnect.io/",
+    "link": "https://www.youtube.com/watch?v=XutBgvk3Tdk",
     "descricao": "Plataforma de ensino online com aulas interativas e gamificação.",
     "figma": "https://www.figma.com/proto/educonnect",
     "github": "https://github.com/educonnect",
     "tecnologias": ["Vue.js", "Django", "PostgreSQL"],
     "categoria": "Hackathons",
-    "imagens": ["educonnect1.png", "educonnect2.png", "educonnect3.png"],
-    "video": "https://www.youtube.com/watch?v=xyz789",
+    "img1": "educonnect1.png",
+    "img2": "educonnect2.png",
+    "img3": "educonnect3.png",
     "status": "Concluído"
   },
   {
@@ -82,7 +102,7 @@
     "desenvolvedores": [
       {
         "nome": "Giovanna",
-        "linkedin": "https://www.linkedin.com/in/giovanna"
+        "linkedin": "www.linkedin.com/in/giovanna-carvalho-de-moraes-964a8a191"
       },
       {
         "nome": "Milena",
@@ -99,7 +119,9 @@
     "github": "https://github.com/greenway-app",
     "tecnologias": ["React Native", "Node.js", "MongoDB"],
     "categoria": "Design",
-    "imagens": ["greenway1.png", "greenway2.png", "greenway3.png"],
+    "img1": "greenway1.png",
+    "img2": "greenway2.png",
+    "img3": "greenway3.png",
     "video": "https://www.youtube.com/watch?v=greenway_demo",
     "status": "Beta"
   },
@@ -118,7 +140,103 @@
     "github": "https://github.com/safehome",
     "tecnologias": ["Angular", "Python", "TensorFlow"],
     "categoria": "Code",
-    "imagens": ["safehome1.png", "safehome2.png", "safehome3.png"],
+    "img1": "safehome1.png",
+    "img2": "safehome2.png",
+    "img3": "safehome3.png",
+    "video": "https://www.youtube.com/watch?v=safehome_demo",
+    "status": "Em desenvolvimento"
+  },
+  {
+    "id": 6,
+    "nome": "Portifólio",
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna-carvalho-de-moraes-964a8a191/"
+      }
+    ],
+    "link": "https://safehome.io/",
+    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "figma": "https://www.figma.com/proto/safehome",
+    "github": "https://github.com/safehome",
+    "tecnologias": ["Angular", "Python", "TensorFlow"],
+    "categoria": "Code",
+    "img1": "safehome1.png",
+    "img2": "safehome2.png",
+    "img3": "safehome3.png",
+    "video": "https://www.youtube.com/watch?v=safehome_demo",
+    "status": "Em desenvolvimento"
+  },
+  {
+    "id": 8,
+    "nome": "FichaChef",
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna-carvalho-de-moraes-964a8a191/"
+      },
+      {
+        "nome": "Andrey",
+        "linkedin": "https://www.linkedin.com/in/james-an-7b539a27b/"
+      },
+      {
+        "nome": "Breno",
+        "linkedin": "https://www.linkedin.com/in/breno-oliveira-902628350/"
+      },
+      {
+        "nome": "Alan",
+        "linkedin": "https://www.linkedin.com/in/alan-matheus-b199131a2/"
+      },
+      {
+        "nome": "Sthefany",
+        "linkedin": "https://www.linkedin.com/in/sthefany-santos-soares-76aa5b258/"
+      }
+    ],
+    "link": null,
+    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "figma": "https://www.figma.com/proto/safehome",
+    "github": "https://github.com/giolaucm/Ficha-Chef",
+    "tecnologias": ["React", "Android Studio", "Kotlin"],
+    "categoria": "Code",
+    "img1": "safehome1.png",
+    "img2": "safehome2.png",
+    "img3": "safehome3.png",
+    "status": "Em desenvolvimento"
+  },
+  {
+    "id": 7,
+    "nome": "Talking Care",
+    "desenvolvedores": [
+      {
+        "nome": "Giovanna",
+        "linkedin": "https://www.linkedin.com/in/giovanna-carvalho-de-moraes-964a8a191/"
+      },
+      {
+        "nome": "Andrey",
+        "linkedin": "https://www.linkedin.com/in/james-an-7b539a27b/"
+      },
+      {
+        "nome": "Nicoly",
+        "linkedin": "https://www.linkedin.com/in/nicoly-santos-6555a7213/"
+      },
+      {
+        "nome": "Victor",
+        "linkedin": "https://www.linkedin.com/in/victor-sousaaa/"
+      },
+      {
+        "nome": "Sthefany",
+        "linkedin": "https://www.linkedin.com/in/sthefany-santos-soares-76aa5b258/"
+      }
+    ],
+    "link": "https://www.youtube.com/watch?v=dceFRJGuAv0",
+    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "figma": "https://www.figma.com/proto/safehome",
+    "github": "https://github.com/safehome",
+    "tecnologias": ["Angular", "Python", "TensorFlow"],
+    "categoria": "Code",
+    "img1": "safehome1.png",
+    "img2": "safehome2.png",
+    "img3": "safehome3.png",
     "video": "https://www.youtube.com/watch?v=safehome_demo",
     "status": "Em desenvolvimento"
   }

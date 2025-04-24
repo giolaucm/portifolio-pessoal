@@ -1,144 +1,117 @@
 /* Estilos para o container principal */
 .video {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 100px;
-    box-sizing: border-box;
-    overflow: hidden; /* Remove scroll horizontal */
-    position: relative; /* Permite posicionamento absoluto do background */
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Estilos para o texto */
+.video-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 35%;
+  z-index: 2;
+}
+
+.video-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.video-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Estilos para o player de vídeo */
+.video-player {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* Acima do fundo */}
+
+.video-player video {
+  width: 80%;
+  height: 70%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px; /* Bordas arredondadas */
+  margin-right: 50px;
+  z-index: 2; /* Garante que o vídeo fique acima do background */
+}
+
+/* Estilos para o background do vídeo */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 90%; /* Mantém a proporção original */
+  height: 100%; /* Mantém a proporção original */
+  object-fit: contain; /* Mantém a proporção da imagem */
+  z-index: 1; /* Coloca o background atrás do vídeo */
+  margin-right: 60px; /* Mantém o espaçamento original */
+}
+
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .video {
+    padding: 30px 20px;
   }
-  
-  /* Estilos para o texto */
+
   .video-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    width: 35%; /* Ajusta o tamanho do texto */
-    z-index: 2; /* Garante que o texto fique acima do background */
+    width: 45%;
   }
-  
+
   .video-text h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
   }
-  
+
   .video-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1rem;
   }
-  
-  /* Estilos para o player de vídeo */
+
   .video-player {
     width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
   }
-  
+
   .video-player video {
-    width: 80%;
-    height: 70%;
-    object-fit: cover;
-    display: block;
-    border-radius: 20px; /* Bordas arredondadas */
-    margin-right: 50px;
-    z-index: 2; /* Garante que o vídeo fique acima do background */
+    height: auto;
   }
-  
-  /* Estilos para o background do vídeo */
+}
+
+@media (max-width: 992px) {
+  .video {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+
+  .video-text,
+  .video-player {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .video-player video {
+    width: 100%;
+    height: auto;
+  }
+
   .video-background {
-    position: absolute;
-    top: 0;
-    left: 60%;
-    width: 90%; /* Mantém a proporção original */
-    height: 80%; /* Mantém a proporção original */
-    object-fit: contain; /* Mantém a proporção da imagem */
-    z-index: 1; /* Coloca o background atrás do vídeo */
-    margin-right: 60px; /* Mantém o espaçamento original */
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.1;
   }
-  
-  /* Responsividade */
-  @media (max-width: 1600px) {
-    .video {
-      padding: 50px 80px;  
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .video {
-      padding: 50px;
-    }
-  
-    .video-text {
-      width: 45%;
-    }
-  
-    .video-player {
-      width: 50%;
-    }
-
-  }
-  
-  @media (max-width: 992px) {
-    .video {
-      flex-direction: column;
-      gap: 40px;
-      padding: 50px 30px;
-    }
-  
-    .video-text,
-    .video-player {
-      width: 100%;
-      max-width: 800px;
-    }
-  
-    .video-player video {
-      height: 300px;
-    }
-  
-    .video-background {
-      width: 100%;
-      height: auto;
-      margin-right: 0;
-    }
-  }
-  
-  @media (max-width: 1200px) {
-    .video {
-      padding: 30px 20px;
-    }
-  
-    .video-text h2 {
-      font-size: 1.5rem;
-    }
-  
-    .video-text p {
-      font-size: 1rem;
-    }
-  
-    .video-player video {
-      height: 250px;
-    }
-  
-    .video-background {
-      width: 100%;
-      height: auto;
-    }
-
-    .video-background {
-        top: 0;
-        left: 55%;
-        width: 85%; /* Mantém a proporção original */
-        height: 75%; /* Mantém a proporção original */
-        object-fit: contain; /* Mantém a proporção da imagem */
-        z-index: 1; /* Coloca o background atrás do vídeo */
-        margin-right: 60px; /* Mantém o espaçamento original */
-      }
-  }
+}

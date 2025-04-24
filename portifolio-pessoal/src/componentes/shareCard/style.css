@@ -1,0 +1,125 @@
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .share-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .share-card-button {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+  }
+
+  .share-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  .share-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px 0;
+  }
+  
+  .share-options button {
+    border-radius: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+  }
+  
+  .share-options button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 8px; /* Espaço entre o input e o botão */
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    outline: none;
+    height: 50px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    color: var(--secondary-color); /* Cor de texto mais visível */
+    background-color: #fff; /* Fundo branco para garantir contraste */
+  }
+  
+  input:focus {
+    border-color: var(--secondary-color); /* Cor da borda ao focar no campo */
+    box-shadow: 0 0 5px var(--secondary-color); /* Destacar campo de foco */
+  }
+  
+  input::placeholder {
+    color: #aaa; /* Cor do placeholder */
+  }
+  
+  
+  
+  .copy-btn {
+    background-color: var(--quaternary-color);
+    color: var(--secondary-color);
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+    .copy-btn:hover {
+        background-color: #ffc53f;
+    }
+  
+  

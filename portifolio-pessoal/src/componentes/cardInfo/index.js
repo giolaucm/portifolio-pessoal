@@ -1,57 +1,76 @@
 import '../cardInfo/styles.css';
-import { useParams, Link } from 'react-router-dom';
 import '../textsFormate/formate.css';
-import projects from '../../json/projects.json';
+import { useParams } from 'react-router-dom';
 import { useState, useRef } from 'react';
+import projects from '../../json/projects.json';
+import ShareCard from '../shareCard';
+
+function Colaborador({ dev }) {
+    const [imgErro, setImgErro] = useState(false);
+    const nomeArquivo = dev.nome?.trim().replace(/\s+/g, '');
+    const caminhoImagem = `/assets/colaboradores/${nomeArquivo}.jpg`;
+
+    return (
+        <div className="colaborador">
+            <a
+                href={dev.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="colaborador-img"
+            >
+                <img
+                    src={imgErro ? "/assets/colaboradores/not-profile.jpg" : caminhoImagem}
+                    alt={`Foto de ${dev.nome}`}
+                    onError={() => setImgErro(true)}
+                    className="img-perfil"
+                />
+            </a>
+            <div className="colaborador-nome themePurple">{dev.nome}</div>
+        </div>
+    );
+}
 
 export default function CardInfo() {
     const { id } = useParams();
     const projeto = projects.find((p) => p.id === Number(id));
 
-    // Image carousel states
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-    const carouselRef = useRef(null);
-
-    // Share functionality states
     const [showShareOptions, setShowShareOptions] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    // Image carousel functions
+    const carouselRef = useRef(null);
+
+    if (!projeto) return <p>Projeto não encontrado</p>;
+
+    const imagens = projeto.imagens?.length ? projeto.imagens : ['capa.png'];
+
     const openModal = (index = 0) => {
         setCurrentIndex(index);
         setIsModalOpen(true);
     };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    const closeModal = () => setIsModalOpen(false);
 
     const prevImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? projeto.imagens.length - 1 : prevIndex - 1));
+        setCurrentIndex((prev) => (prev === 0 ? imagens.length - 1 : prev - 1));
     };
 
     const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === projeto.imagens.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prev) => (prev === imagens.length - 1 ? 0 : prev + 1));
     };
 
-    // Draggable carousel functions
     const handleMouseDown = (e) => {
         setIsDragging(true);
         setStartX(e.pageX - carouselRef.current.offsetLeft);
         setScrollLeft(carouselRef.current.scrollLeft);
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
-    };
-
-    const handleMouseUp = () => {
-        setIsDragging(false);
-    };
+    const handleMouseUp = () => setIsDragging(false);
+    const handleMouseLeave = () => setIsDragging(false);
 
     const handleMouseMove = (e) => {
         if (!isDragging) return;
@@ -61,56 +80,23 @@ export default function CardInfo() {
         carouselRef.current.scrollLeft = scrollLeft - walk;
     };
 
-    // Share functions
-    const shareOnSocial = (platform) => {
-        const url = encodeURIComponent(projeto.link);
-        const title = encodeURIComponent(projeto.nome);
-        const text = encodeURIComponent(projeto.descricao.substring(0, 100) + '...');
-        
-        let shareUrl = '';
-        
-        switch(platform) {
-            case 'facebook':
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                break;
-            case 'twitter':
-                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title} - ${text}`;
-                break;
-            case 'linkedin':
-                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${text}`;
-                break;
-            default:
-                return;
-        }
-        
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-        setShowShareOptions(false);
-    };
-
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(projeto.link)
-            .then(() => {
-                setCopied(true);
-                setTimeout(() => setCopied(false), 2000);
-            })
-            .catch(err => {
-                console.error('Falha ao copiar: ', err);
-            });
+        navigator.clipboard.writeText(projeto.link).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        }).catch(err => console.error('Erro ao copiar link:', err));
         setShowShareOptions(false);
     };
-
-    if (!projeto) {
-        return <p>Projeto não encontrado</p>;
-    }
 
     return (
         <div className="publiTitle">
             <p className="subtitulo">PROJETOS</p>
+
             <div className="projeto-conteudo-container">
                 <div className="projeto-conteudo-info">
-                    {/* Image Carousel */}
+                    {/* Carrossel */}
                     <div className="carrossel-container">
-                        <div 
+                        <div
                             className="carrossel"
                             ref={carouselRef}
                             onMouseDown={handleMouseDown}
@@ -118,108 +104,103 @@ export default function CardInfo() {
                             onMouseUp={handleMouseUp}
                             onMouseMove={handleMouseMove}
                         >
-                            {projeto.imagens.map((imagem, index) => (
-                                <div 
-                                    key={index} 
-                                    className="carrossel-item"
-                                    onClick={() => openModal(index)}
-                                >
-                                    <img 
-                                        src={`/img/${imagem}`} 
-                                        alt={`Imagem ${index + 1}`} 
-                                        className="carrossel-img" 
+                            {imagens.map((imagem, index) => (
+                                <div key={index} className="carrossel-item" onClick={() => openModal(index)}>
+                                    <img
+                                        src={`/assets/${projeto.id}/${imagem}`}
+                                        alt={`Imagem ${index + 1}`}
+                                        className="carrossel-img"
+                                        onError={(e) => {
+                                            e.target.src = '/assets/capa.png';
+                                            e.target.alt = 'Imagem não encontrada';
+                                        }}
                                     />
                                 </div>
                             ))}
                         </div>
-                        <button className="ver-todas-btn" onClick={() => openModal(0)}>
-                            Ver todas as imagens
-                        </button>
+                        {imagens.length > 1 && (
+                            <button className="ver-todas-btn" onClick={() => openModal(0)}>
+                                Ver todas as imagens
+                            </button>
+                        )}
                     </div>
 
-                    {/* Image Modal */}
+                    {/* Modal de Imagens */}
                     {isModalOpen && (
                         <div className="modal-overlay" onClick={closeModal}>
                             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                                 <button className="close-button" onClick={closeModal}>×</button>
-                                <img 
-                                    src={`/img/${projeto.imagens[currentIndex]}`} 
-                                    alt={`Imagem ${currentIndex + 1}`} 
-                                    className="modal-image" 
+                                <img
+                                    src={`/assets/${projeto.id}/${imagens[currentIndex]}`}
+                                    alt={`Imagem ${currentIndex + 1}`}
+                                    className="modal-image"
+                                    onError={(e) => {
+                                        e.target.src = '/assets/img1.png';
+                                        e.target.alt = 'Imagem não encontrada';
+                                    }}
                                 />
-                                <button className="carousel-button prev" onClick={prevImage}>
-                                    &#9664;
-                                </button>
-                                <button className="carousel-button next" onClick={nextImage}>
-                                    &#9654;
-                                </button>
+                                <button className="carousel-button prev" onClick={prevImage}>&#9664;</button>
+                                <button className="carousel-button next" onClick={nextImage}>&#9654;</button>
                                 <div className="image-counter">
-                                    {currentIndex + 1} / {projeto.imagens.length}
+                                    {currentIndex + 1} / {imagens.length}
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    {/* Project Info */}
+                    {/* Informações principais */}
                     <div className="info">
                         <div className="info-description">
                             <div className="info-container">
                                 <div className="category">{projeto.categoria}</div>
                                 <div className="status">{projeto.status}</div>
                             </div>
+
                             <div className="info-projeto">
                                 <p className="subtitulo themePurple">{projeto.nome}</p>
                                 <p className="subtitulo-post themePurple">
                                     Desenvolvido por:{' '}
-                                    {projeto.desenvolvedores.map((dev, index) => (
+                                    {projeto.desenvolvedores?.map((dev, index) => (
                                         <span key={index} className="desenvolvedor">
-                                            <a 
-                                                href={dev.linkedin} 
-                                                target="_blank" 
+                                            <a
+                                                href={dev.linkedin}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="dev-link"
                                             >
                                                 {dev.nome}
                                             </a>
-                                            {index !== projeto.desenvolvedores.length - 1 ? ', ' : ''}
+                                            {index !== projeto.desenvolvedores.length - 1 && ', '}
                                         </span>
                                     ))}
                                 </p>
                             </div>
                         </div>
+
                         <div className="info-acess">
                             <a className="acess-button" href={projeto.link} target="_blank" rel="noopener noreferrer">
                                 Acessar projeto
                             </a>
+
                             <div className="share-container">
-                                <button 
-                                    className="share-button" 
-                                    onClick={() => setShowShareOptions(!showShareOptions)}
-                                >
-                                    <i className="fi fi-rr-share"></i> Share
+                                <button className="share-button" onClick={() => setShowShareOptions(prev => !prev)}>
+                                    <i className="fi fi-rr-share"></i> Compartilhar
                                 </button>
+
                                 {showShareOptions && (
-                                    <div className="share-options">
-                                        <button onClick={() => shareOnSocial('facebook')}>
-                                            <i className="fi fi-brands-facebook"></i> Facebook
-                                        </button>
-                                        <button onClick={() => shareOnSocial('twitter')}>
-                                            <i className="fi fi-brands-twitter"></i> Twitter
-                                        </button>
-                                        <button onClick={() => shareOnSocial('linkedin')}>
-                                            <i className="fi fi-brands-linkedin"></i> LinkedIn
-                                        </button>
-                                        <button onClick={copyToClipboard}>
-                                            <i className="fi fi-rr-copy"></i> Copiar link
-                                        </button>
-                                    </div>
+                                    <ShareCard
+                                        link={projeto.link}
+                                        title={projeto.nome}
+                                        onClose={() => setShowShareOptions(false)}
+                                        onCopy={copyToClipboard}
+                                    />
                                 )}
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Project Description */}
+                {/* Descrição */}
                 <div className="projeto-conteudo-texto">
                     <p className="subtitulo themePurple">DESCRIÇÃO</p>
                     <p className="publiText">{projeto.descricao}</p>
@@ -227,24 +208,24 @@ export default function CardInfo() {
 
                 <div className="divisoria"></div>
 
-                {/* Project Links */}
+                {/* Acessos */}
                 <div className="projeto-conteudo-texto">
                     <p className="subtitulo themePurple">ACESSOS</p>
                     <div className="link-projeto">
-                        <a className='link' href={projeto.figma} target="_blank" rel="noopener noreferrer">Figma</a>
-                        <a className='link' href={projeto.link} target="_blank" rel="noopener noreferrer">Site</a>
-                        <a className='link' href={projeto.github} target="_blank" rel="noopener noreferrer">Repositório</a>
+                        <a className="link" href={projeto.figma} target="_blank" rel="noopener noreferrer">Figma</a>
+                        <a className="link" href={projeto.link} target="_blank" rel="noopener noreferrer">Site</a>
+                        <a className="link" href={projeto.github} target="_blank" rel="noopener noreferrer">Repositório</a>
                     </div>
                 </div>
 
                 <div className="divisoria"></div>
 
-                {/* Technologies */}
+                {/* Tecnologias */}
                 <div className="projeto-conteudo-texto">
                     <p className="subtitulo">TECNOLOGIAS UTILIZADAS</p>
                     <div className="tecnologia">
                         <div className="habilidades-icones">
-                            {projeto.tecnologias.map((tech, index) => (
+                            {projeto.tecnologias?.map((tech, index) => (
                                 <div key={index} className="icone">{tech}</div>
                             ))}
                         </div>
@@ -253,29 +234,18 @@ export default function CardInfo() {
 
                 <div className="divisoria"></div>
 
-                {/* Demo Video */}
-                <div className="projeto-conteudo-texto">
-                    <p className="subtitulo">VÍDEO DEMO</p>
-                    <iframe className="publiVideo" src={projeto.video} title="Vídeo Demo" allowFullScreen></iframe>
-                </div>
-
-                <div className="divisoria"></div>
-
-                {/* Collaborators */}
+                {/* Colaboradores */}
                 <div className="projeto-conteudo-texto">
                     <p className="subtitulo">COLABORADORES</p>
                     <div className="colaboradores">
-                        {projeto.desenvolvedores.map((dev, index) => (
-                            <div key={index} className="colaborador">
-                                <Link to={dev.linkedin} className="colaborador-img"></Link>
-                                <div className="colaborador-nome themePurple">{dev.nome}</div>
-                            </div>
+                        {projeto.desenvolvedores?.map((dev, index) => (
+                            <Colaborador dev={dev} key={index} />
                         ))}
                     </div>
                 </div>
             </div>
 
-            {/* Copy feedback */}
+            {/* Feedback de cópia */}
             {copied && (
                 <div className="copied-feedback">
                     Link copiado para a área de transferência!

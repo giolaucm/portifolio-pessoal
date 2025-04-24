@@ -6,6 +6,15 @@
     gap: 50px;
     padding: 30px;
     width: 100%;
+    max-width: 500px;
+    border-radius: border-box;;
+}
+
+.card-items {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
 }
 
 .desenvolvedor a{
@@ -45,8 +54,49 @@
     gap: 50px;
 }
 
+
+a .titulo-projeto {
+    all: unset;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
 @media screen and (max-width: 1600px) {
     .card-img {
         height: 200px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .card-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px; /* Ajuste o valor conforme necessário */
+        padding: 10px 0; /* Adicione um padding para garantir que não fique grudado nas bordas */
+        scroll-snap-type: x mandatory; /* Garante que os itens parem ao rolar */
+    }
+
+    .publiTitulo {
+        width: 100%;
+        gap: 20px;
+        flex-direction: column;
+        
+    }
+
+    .card-items {
+        width: 100%;
+        gap: 20px;
+        box-sizing: border-box;
+        scrollbar-width: thin; /* Para Firefox */
+        scrollbar-color: var(--quaternary-color) var(--background-color); /* Para Firefox */
+        overflow-x: auto; /* Para permitir rolagem horizontal */
+        scroll-snap-align: start; /* Para garantir que o card comece no início ao rolar */
+        padding: 10px; /* Adicione um padding para garantir que não fique grudado nas bordas */
+        flex-direction: row;
+        display: flex;
     }
 }

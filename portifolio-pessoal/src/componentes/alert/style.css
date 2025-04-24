@@ -1,16 +1,19 @@
 .notificacao {
-    position: absolute;
+    position: fixed; /* melhor que absolute pra alertas flutuantes */
     bottom: 0;
     left: 0;
+    z-index: 9999; /* fica por cima de tudo */
     background-color: white;
-    border-radius: 30px; /* Arredonda apenas o topo */
+    border-radius: 30px;
     display: flex;
-    flex-direction: row-reverse; /* Organiza os filhos verticalmente */
+    flex-direction: row-reverse;
     padding: 20px;
     width: auto;
+    max-width: 90%;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
     margin: 0 0 40px 40px;
-}
+  }
+  
 
 .notificacaoHeader {
     display: flex;

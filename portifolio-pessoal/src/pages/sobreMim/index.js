@@ -6,12 +6,12 @@ import Informacoes from "../../componentes/sobreInformacoes/informacoes";
 
 export default function SobreMim () {
     return (
-        <main>
+        <section className="fade-up opacity-0 transition-all duration-500">
              <Apresentacao />
              <Video />
              <Resumo />
              <Informacoes/>
-        </main>
+        </section>
 
     )
 }
