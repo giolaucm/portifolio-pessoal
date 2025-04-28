@@ -12,12 +12,7 @@ function Colaborador({ dev }) {
 
     return (
         <div className="colaborador">
-            <a
-                href={dev.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="colaborador-img"
-            >
+            <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" className="colaborador-img">
                 <img
                     src={imgErro ? "/assets/colaboradores/not-profile.jpg" : caminhoImagem}
                     alt={`Foto de ${dev.nome}`}
@@ -90,7 +85,7 @@ export default function CardInfo() {
 
     return (
         <div className="publiTitle">
-            <p className="subtitulo">PROJETOS</p>
+            <p className="subtitulo themePurple">PROJETOS</p>
 
             <div className="projeto-conteudo-container">
                 <div className="projeto-conteudo-info">
@@ -202,7 +197,7 @@ export default function CardInfo() {
 
                 {/* Descrição */}
                 <div className="projeto-conteudo-texto">
-                    <p className="subtitulo themePurple">DESCRIÇÃO</p>
+                    <p className="subbtitulo themePurple">DESCRIÇÃO</p>
                     <p className="publiText">{projeto.descricao}</p>
                 </div>
 
@@ -210,7 +205,7 @@ export default function CardInfo() {
 
                 {/* Acessos */}
                 <div className="projeto-conteudo-texto">
-                    <p className="subtitulo themePurple">ACESSOS</p>
+                    <p className="subbtitulo themePurple">ACESSOS</p>
                     <div className="link-projeto">
                         <a className="link" href={projeto.figma} target="_blank" rel="noopener noreferrer">Figma</a>
                         <a className="link" href={projeto.link} target="_blank" rel="noopener noreferrer">Site</a>
@@ -222,7 +217,7 @@ export default function CardInfo() {
 
                 {/* Tecnologias */}
                 <div className="projeto-conteudo-texto">
-                    <p className="subtitulo">TECNOLOGIAS UTILIZADAS</p>
+                    <p className="subbtitulo themePurple">TECNOLOGIAS UTILIZADAS</p>
                     <div className="tecnologia">
                         <div className="habilidades-icones">
                             {projeto.tecnologias?.map((tech, index) => (
@@ -236,7 +231,7 @@ export default function CardInfo() {
 
                 {/* Colaboradores */}
                 <div className="projeto-conteudo-texto">
-                    <p className="subtitulo">COLABORADORES</p>
+                    <p className="subbtitulo themePurple">COLABORADORES</p>
                     <div className="colaboradores">
                         {projeto.desenvolvedores?.map((dev, index) => (
                             <Colaborador dev={dev} key={index} />

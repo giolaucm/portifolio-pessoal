@@ -21,15 +21,19 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formDataToSend = new FormData();
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("message", formData.textarea);
+    const formDataToSend = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.textarea,
+    };
 
     try {
-      const response = await fetch("https://formsubmit.co/giolaucm.dev@gmail.com", {
+      const response = await fetch("http://localhost:5000/contato", {  // URL do backend ajustada
         method: "POST",
-        body: formDataToSend,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataToSend),
       });
 
       if (response.ok) {

@@ -1,29 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import projects from '../../json/projects.json';
+import './style.css';
 
-const Breadcrumbs = ({ projetos, currentId }) => {
-  // Encontra o projeto atual
-  const currentProjeto = projetos.find(projeto => projeto.id === currentId);
+export default function Breadcrumb() {
+    const { id } = useParams();
+    const projeto = projects.find((p) => p.id === Number(id));
 
-  // Cria o caminho de navegação
-  const breadcrumbItems = projetos.filter(projeto => projeto.id <= currentId); // Exibe até o projeto atual
-
-  return (
-    <div className="breadcrumbs">
-      <ul className="breadcrumb-list">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        {breadcrumbItems.map((projeto, index) => (
-          <li key={projeto.id}>
-            <Link to={`/projeto/${projeto.id}`}>{projeto.nome}</Link>
-            {index < breadcrumbItems.length - 1 && ' > '}
-          </li>
-        ))}
-        <li className="current">{currentProjeto ? currentProjeto.nome : 'Projeto desconhecido'}</li>
-      </ul>
-    </div>
-  );
-};
-
-export default Breadcrumbs;
+    return (
+        <nav className="breadcrumb">
+            <Link to="/" className="breadcrumb-item">
+                <i className="fi fi-rr-home"></i>
+            </Link>
+            <span className="breadcrumb-separator">›</span>
+            <Link to="/projetos" className="breadcrumb-item">
+                Projetos
+            </Link>
+            <span className="breadcrumb-separator">›</span>
+            <span className="breadcrumb-current">
+                {projeto?.nome || 'Projeto'}
+            </span>
+        </nav>
+    );
+}

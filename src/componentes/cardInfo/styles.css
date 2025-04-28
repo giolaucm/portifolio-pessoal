@@ -177,7 +177,8 @@
 
 .publiTitle {
     display: flex;
-    width: 75%;
+    width: 100%;
+    max-width: 800px;
     flex-direction: column;
     gap: 50px;
 }
@@ -304,6 +305,15 @@
     transition: transform 0.3s ease;
 }
 
+.dev-link {
+    text-decoration: none;
+    color: var(--quaternary-color);
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
+    gap: 10px;
+}
+
 .carrossel-item:hover {
     transform: scale(1.02);
 }
@@ -378,6 +388,12 @@
     scroll-behavior: smooth;
     scrollbar-width: none; /* Para Firefox */
     -ms-overflow-style: none; /* Para IE/Edge */
+}
+
+.subbtitulo {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--primary-color);
 }
 
 .carousel::-webkit-scrollbar {
@@ -491,5 +507,8 @@
     .info {
         flex-direction: column;
         align-items: center;
+    }
+    .publiTitle {
+        width: 100%;
     }
 }

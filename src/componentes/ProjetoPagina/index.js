@@ -8,8 +8,11 @@ import Breadcrumbs from '../Breadcrumbs/index';
 export default function ProjetoPagina() {
     return (
     <main className="projeto-container">
+        <Breadcrumbs />
+        <div className='projeto-body'>
         <CardInfo />
         <CardOthers />
+        </div>
     </main>  
     );
 }

@@ -16,7 +16,7 @@ export default function CardOthers() {
 
     return (
         <div className="publiTitulo">
-            <p className="subtitulo">OUTROS PROJETOS</p>
+            <p className="subtitulo themePurple">OUTROS PROJETOS</p>
             <div className="card-conteudo">
                 <div className='card-items'>
                     {recomendados.map((project) => (

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nome": "Blue",
+    "nome": "Blu",
     "desenvolvedores": [
       {
         "nome": "Giovanna",
@@ -25,7 +25,7 @@
       }
     ],
     "link": null,
-    "descricao": "Plataforma de telemedicina para consultas médicas online.",
+    "descricao": "Blu é uma plataforma de turismo cultural local que propõe uma jornada de redescoberta: conhecer o mundo sem sair da sua cidade. Mais do que visitar lugares, o projeto incentiva encontros reais com diferentes culturas por meio de experiências conduzidas por imigrantes, comunidades tradicionais e iniciativas culturais. Blu nasce do desejo de resgatar a identidade cultural perdida — a nossa e a do outro — em um mundo cada vez mais acelerado e homogêneo.",
     "figma": "https://www.figma.com/proto/talkingcare",
     "github": "https://github.com/talkingcare",
     "tecnologias": ["React", "Node.js", "MongoDB"],
@@ -56,16 +56,13 @@
         "linkedin": "https://www.linkedin.com/in/sthefany"
       }
     ],
-    "link": "https://fittrack.app/",
-    "descricao": "Aplicativo para rastreamento de treinos e nutrição personalizada.",
+    "link": "https://www.youtube.com/watch?v=4acOsD8gQqQ",
+    "descricao": "O PerifaCria é uma plataforma gamificada criada para apoiar empreendedores periféricos, oferecendo módulos educativos, ferramentas de gestão e uma comunidade para troca de experiências e parcerias. O objetivo é proporcionar aprendizado acessível, evolução do negócio e promover conexões entre empreendedores locais.",
     "figma": "https://www.figma.com/proto/fittrack",
     "github": "https://github.com/fittrack-app",
     "tecnologias": ["Flutter", "Firebase", "Node.js"],
     "categoria": "Hackathons",
-    "img1": "fittrack1.png",
-    "img2": "fittrack2.png",
-    "img3": "fittrack3.png",
-    "video": "https://www.youtube.com/watch?v=4acOsD8gQqQ",
+    "imagens": ["capa.png", "img1.png"],
     "status": "Concluído"
   },
   {
@@ -86,14 +83,12 @@
       }
     ],
     "link": "https://www.youtube.com/watch?v=XutBgvk3Tdk",
-    "descricao": "Plataforma de ensino online com aulas interativas e gamificação.",
+    "descricao": "O Avanti é um aplicativo criado para capacitar jovens empreendedores brasileiros entre 18 e 34 anos, utilizando a metodologia exclusiva NAME (Navegação, Atratividade, Motivação e Execução). A plataforma oferece cursos interativos, ranking de desempenho, perfis personalizados para empreendedores e investidores, fóruns colaborativos e suporte especializado, promovendo uma jornada completa de crescimento e conexão no ecossistema empreendedor.",
     "figma": "https://www.figma.com/proto/educonnect",
     "github": "https://github.com/educonnect",
     "tecnologias": ["Vue.js", "Django", "PostgreSQL"],
     "categoria": "Hackathons",
-    "img1": "educonnect1.png",
-    "img2": "educonnect2.png",
-    "img3": "educonnect3.png",
+    "imagens": ["capa.png", "img1.png"],
     "status": "Concluído"
   },
   {
@@ -114,14 +109,12 @@
       }
     ],
     "link": "https://greenway.eco/",
-    "descricao": "Aplicativo para rastreamento de pegada de carbono e consumo sustentável.",
+    "descricao": "Elara é uma loja-conceito criada para unir design moderno, experiência de compra intuitiva e identidade visual marcante. O projeto foi idealizado com foco em um público jovem e conectado, valorizando a estética minimalista e a usabilidade.",
     "figma": "https://www.figma.com/proto/greenway",
     "github": "https://github.com/greenway-app",
-    "tecnologias": ["React Native", "Node.js", "MongoDB"],
+    "tecnologias": ["Wordpress", "Figma"],
     "categoria": "Design",
-    "img1": "greenway1.png",
-    "img2": "greenway2.png",
-    "img3": "greenway3.png",
+    "imagens": ["capa.png", "img1.png"],
     "video": "https://www.youtube.com/watch?v=greenway_demo",
     "status": "Beta"
   },
@@ -135,7 +128,7 @@
       }
     ],
     "link": "https://safehome.io/",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "descricao": "Entre Sonhos e Realidades é uma plataforma interativa onde os autores podem compartilhar suas histórias originais e contar com o apoio do público para continuar a narrativa. A proposta é envolver os leitores na construção do enredo, criando um espaço colaborativo que mistura ficção e realidade, permitindo que cada história evolua de maneira dinâmica e conectada com quem acompanha.",
     "figma": "https://www.figma.com/proto/safehome",
     "github": "https://github.com/safehome",
     "tecnologias": ["Angular", "Python", "TensorFlow"],
@@ -156,7 +149,7 @@
       }
     ],
     "link": "https://safehome.io/",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "descricao": "Sou Giovanna, desenvolvedora com foco em criar soluções que gerem impacto social real, especialmente em contextos de vulnerabilidade e acessibilidade. Acredito na tecnologia como ferramenta de transformação e busco refletir isso em cada projeto que desenvolvo.",
     "figma": "https://www.figma.com/proto/safehome",
     "github": "https://github.com/safehome",
     "tecnologias": ["Angular", "Python", "TensorFlow"],
@@ -193,7 +186,7 @@
       }
     ],
     "link": null,
-    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "descricao": "O FichaChef é um aplicativo desenvolvido para ajudar empreendedores da gastronomia a precificarem corretamente seus produtos. Através de fichas técnicas, o app calcula automaticamente o valor ideal de venda com base nos insumos e custos informados. Conta também com um sistema de controle de estoque para facilitar a gestão dos ingredientes e produtos.",
     "figma": "https://www.figma.com/proto/safehome",
     "github": "https://github.com/giolaucm/Ficha-Chef",
     "tecnologias": ["React", "Android Studio", "Kotlin"],
@@ -229,7 +222,7 @@
       }
     ],
     "link": "https://www.youtube.com/watch?v=dceFRJGuAv0",
-    "descricao": "Sistema de segurança residencial com monitoramento via IA.",
+    "descricao": "O Talkincare é uma plataforma de suporte psicológico focada em jovens, oferecendo sessões de terapia ao vivo, chat com profissionais, e ferramentas de autoconhecimento. Com funcionalidades como diário emocional, botão SOS e cronogramas de tratamento, a plataforma busca criar um ambiente seguro e motivador, sem os impactos negativos das redes sociais.",
     "figma": "https://www.figma.com/proto/safehome",
     "github": "https://github.com/safehome",
     "tecnologias": ["Angular", "Python", "TensorFlow"],
