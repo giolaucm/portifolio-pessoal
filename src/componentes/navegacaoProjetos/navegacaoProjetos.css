@@ -51,16 +51,18 @@
     justify-content: center;
     gap: 4rem;
     padding: 2rem 5%;
+    height: 100%;
     box-sizing: border-box;
 }
 
 .projeto-card {
-    flex: 0 1 calc(33.333% - 4rem);
+    flex: 0 1 calc(45% - 1rem);
     min-width: 300px;
-    max-width: 500px;
+    max-width: 450px;
+    height: 450px;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: white;
+    background-color: black;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.3s;
     margin: 1rem;
@@ -74,11 +76,43 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: var(--quaternary-color);
+}
+
+.pagination .active a {
+    background-color: var(--quaternary-color);
+}
+
+.pagination .disabled a {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 /* Responsividade */
-@media (max-width: 1600px) {
+@media (min-width: 1700px) {
+
     .projeto-card {
-        flex-basis: calc(50% - 4rem);
-        height: 500px;
+        width: 40%;
+        height: 450px;
     }
 
     .projetos-nav-btn {
@@ -87,11 +121,11 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .projeto-card {
-        flex-basis: calc(50% - 4rem);
-        height: 250px;
-        max-width: 100%;
+@media (max-width: 1400px) {
+
+    .projetos-nav-btn {
+        font-size: 1rem;
+        width: auto;
     }
 }
 
@@ -118,7 +152,6 @@
     .projetos-nav {
         gap: 0.5rem;
         flex-direction: row;
-
     }
     
     .projetos-nav-btn {

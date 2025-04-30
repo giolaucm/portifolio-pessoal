@@ -177,8 +177,7 @@
 
 .publiTitle {
     display: flex;
-    width: 100%;
-    max-width: 800px;
+    width: auto;
     flex-direction: column;
     gap: 50px;
 }
@@ -482,7 +481,10 @@
 }
 
 @media screen and (max-width: 1600px) {
-    
+    .publiTitle {
+        display: flex;
+        width: 100%;
+    }
 }
 @media screen and (max-width: 768px) {
     .carrossel-item {

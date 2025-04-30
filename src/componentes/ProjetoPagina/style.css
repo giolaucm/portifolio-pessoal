@@ -2,6 +2,7 @@
     display: column;
     padding:100px;
     gap: 50px;
+    width: 100%;
     background-color: var(--background-color);
 }
 
@@ -10,13 +11,14 @@
     flex-direction: row;
     gap: 50px;
     width: 100%;
-    max-width: 1600px;
+    justify-content: space-between;
 }
 
 @media screen and (max-width: 1600px) {
     .projeto-container {
         padding: 100px 50px 50px 50px;
     }
+
     
 }
 
