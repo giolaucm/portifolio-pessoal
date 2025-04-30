@@ -31,7 +31,7 @@ export default function CardOthers() {
                             >
                                 <div className="category">{project.categoria}</div>
                             </div>
-                            <p className="titulo-projeto">{project.nome}</p>
+                            <p className="title-projects">{project.nome}</p>
                         </Link>
                     ))}
                 </div>

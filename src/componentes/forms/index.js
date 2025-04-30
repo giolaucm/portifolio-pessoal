@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../forms/styles.css";
-import Notificacao from "../alert/index"; // ajuste conforme seu projeto
+import Notificacao from "../alert/index";
 import imgCopy from "../img/not_copy.svg";
 
 const Form = () => {
@@ -13,6 +13,7 @@ const Form = () => {
   const [status, setStatus] = useState(null);
   const [notificacaoVisivel, setNotificacaoVisivel] = useState(false);
   const [mensagemNotificacao, setMensagemNotificacao] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,6 +21,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const formDataToSend = {
       name: formData.name,
@@ -28,7 +30,7 @@ const Form = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/contato", {  // URL do backend ajustada
+      const response = await fetch("/api/index.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,21 +38,20 @@ const Form = () => {
         body: JSON.stringify(formDataToSend),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setFormData({ name: "", email: "", textarea: "" });
-        setStatus("Mensagem enviada com sucesso!");
-        setMensagemNotificacao("Mensagem enviada com sucesso!");
-        setNotificacaoVisivel(true);
+        setMensagemNotificacao(data.message || "Mensagem enviada com sucesso!");
       } else {
-        setStatus("Algo deu errado. Tente novamente.");
-        setMensagemNotificacao("Erro ao enviar. Tente novamente.");
-        setNotificacaoVisivel(true);
+        setMensagemNotificacao(data.message || "Erro ao enviar mensagem");
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);
-      setStatus("Erro na conexão. Tente mais tarde.");
       setMensagemNotificacao("Erro na conexão. Tente mais tarde.");
+    } finally {
       setNotificacaoVisivel(true);
+      setIsSubmitting(false);
     }
   };
 
@@ -94,8 +95,12 @@ const Form = () => {
           />
         </div>
 
-        <button className="form-submit-btn" type="submit">
-          Enviar
+        <button 
+          className="form-submit-btn" 
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Enviando..." : "Enviar"}
         </button>
         {status && <p className="form-status">{status}</p>}
       </form>
