@@ -2,31 +2,31 @@
   "name": "portifolio-pessoal",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
-    "cors": "^2.8.5",
     "flag-icon-css": "^4.1.7",
-    "nodemailer": "^6.10.1",
-    "@fortawesome/fontawesome-free": "^6.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-paginate": "^8.3.0",
-    "react-router-dom": "^7.1.1",
+    "react-router-dom": "^7.5.3",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.16"
   },
   "devDependencies": {
-    "typescript": "4.9.5",
+    "cors": "^2.8.5",
     "nodemailer": "^6.10.1",
-    "cors": "^2.8.5"
+    "typescript": "4.9.5"
   },
   "scripts": {
     "prebuild": "chmod -R 755 node_modules/.bin || true",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "serve -s build"
   },
   "browserslist": {
     "production": [

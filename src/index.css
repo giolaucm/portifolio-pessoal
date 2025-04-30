@@ -20,13 +20,12 @@ body {
 
 /* Páginas */
 .initial,
-.video,
 .resumo,
 .projetosInicio,
 .projetosLista {
   display: flex;
   flex-direction: column;
-  padding: 0 100px;
+  padding: 100px 100px;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -39,12 +38,13 @@ body {
 }
 
 .video {
+  height: 60vh;
   background-color: var(--quaternary-color);
-  padding: 0 50px;
+  padding: 0 100px;
 }
 
 .resumo {
-  height: 90vh;
+  height: auto;
   background-color: var(--background-color);
 }
 
@@ -65,13 +65,16 @@ body {
 
 /* Responsividade */
 
-@media (max-width: 992px) {
+@media (max-width: 1500px) {
   .initial,
   .video,
-  .resumo,
   .projetosInicio,
   .projetosLista {
     padding: 0 50px;
+  }
+
+  .resumo {
+    padding: 50px;
   }
 }
 

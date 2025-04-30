@@ -132,6 +132,12 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .header {
+    padding: 1rem 4%;
+  }
+  
+}
 
 @media (max-width: 768px) {
 

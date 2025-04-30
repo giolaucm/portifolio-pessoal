@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: 100vh; /* Garante que ocupa a altura da tela toda */
-    padding: 50px 100px;
+    padding: 50px 50px;
     background-image: url("../img/background.png");
     background-size: cover;
     background-position: center;
@@ -196,6 +196,9 @@
 
     .apresentacao-redes p {
       font-size: 16px;
+    }
+    .apresentacao {
+      padding: 50px 30px;
     }
   }
 

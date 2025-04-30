@@ -7,10 +7,9 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    textarea: "",
+    message: "", // Alterado de 'textarea' para 'message' para consistência com a API
   });
 
-  const [status, setStatus] = useState(null);
   const [notificacaoVisivel, setNotificacaoVisivel] = useState(false);
   const [mensagemNotificacao, setMensagemNotificacao] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,27 +20,29 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validação básica no frontend
+    if (!formData.name || !formData.email || !formData.message) {
+      setMensagemNotificacao("Por favor, preencha todos os campos");
+      setNotificacaoVisivel(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
-    const formDataToSend = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.textarea,
-    };
-
     try {
-      const response = await fetch("/api/index.js", {
+      const response = await fetch("/api/index", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formDataToSend),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setFormData({ name: "", email: "", textarea: "" });
+        setFormData({ name: "", email: "", message: "" });
         setMensagemNotificacao(data.message || "Mensagem enviada com sucesso!");
       } else {
         setMensagemNotificacao(data.message || "Erro ao enviar mensagem");
@@ -83,14 +84,14 @@ const Form = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="textarea">Como posso te ajudar?</label>
+          <label htmlFor="message">Como posso te ajudar?</label>
           <textarea
-            name="textarea"
-            id="textarea"
+            name="message"
+            id="message"
             rows={10}
             cols={50}
             required
-            value={formData.textarea}
+            value={formData.message}
             onChange={handleChange}
           />
         </div>
@@ -102,7 +103,6 @@ const Form = () => {
         >
           {isSubmitting ? "Enviando..." : "Enviar"}
         </button>
-        {status && <p className="form-status">{status}</p>}
       </form>
 
       <Notificacao

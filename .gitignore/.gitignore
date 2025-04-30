@@ -1,0 +1,23 @@
+# Arquivos de ambiente
+.env*.local
+.env
+.env.development
+.env.production
+.env.test
+
+# Arquivos do sistema
+.DS_Store
+
+# Dependências
+/node_modules
+
+# Builds
+/.next
+/out
+
+# Logs
+*.log
+
+# Configurações do IDE
+.idea
+.vscode
