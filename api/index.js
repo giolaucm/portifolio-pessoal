@@ -22,7 +22,7 @@ module.exports = (req, res) => {
 
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
+        to: process.env.EMAIL_TO,
         subject: "Nova Mensagem do Portfólio",
         text: `Nome: ${name}\nE-mail: ${email}\nMensagem: ${message}`
       };
