@@ -7,25 +7,36 @@ import { Link } from 'react-router-dom';
 import Notificacao from '../../componentes/alert/index';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import imgCopy from '../img/not_copy.svg'; // 👈 adiciona essa linha
+import imgCopy from '../img/not_copy.svg';
+import arrowButton from '../img/arrow-up-right.png';
 
 export default function Apresentacao() {
   const [mostrarNotificacao, setMostrarNotificacao] = useState(false);
-  const [mensagemNotificacao, setMensagemNotificacao] = useState(""); // 👈 nova
-  const [imagemNotificacao, setImagemNotificacao] = useState(null); // 👈 nova
+  const [mensagemNotificacao, setMensagemNotificacao] = useState("");
+  const [imagemNotificacao, setImagemNotificacao] = useState(null);
+  const [textVisible, setTextVisible] = useState(false);
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
+
+    // Inicia a animação de digitação após 1 segundo
+    const timer = setTimeout(() => {
+      setTextVisible(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
   const copiarEmail = async () => {
     try {
       await navigator.clipboard.writeText('giolaucm.dev@gmail.com');
-      setMensagemNotificacao("E-mail copiado!"); // 👈 define mensagem
-      setImagemNotificacao(imgCopy);            // 👈 define imagem
+      setMensagemNotificacao("E-mail copiado!");
+      setImagemNotificacao(imgCopy);
       setMostrarNotificacao(true);
       setTimeout(() => setMostrarNotificacao(false), 5000);
     } catch (err) {
@@ -66,7 +77,12 @@ export default function Apresentacao() {
 
           <div className="apresentacao-texto" data-aos="fade" data-aos-delay="100">
             <h5 className="themePurple">Olá, eu sou a</h5>
-            <h1 className="themeOrange">Giovanna Carvalho</h1>
+
+            <h1 className={`themeOrange principalTitle ${textVisible ? 'show-text' : ''}`}>
+              Giovanna Carvalho
+              <span className="cursor">_.</span>
+            </h1>
+
             <p className="themePurple">
               Sou desenvolvedora front-end, aprendendo sobre análise e ciência de
               dados. Acredito no poder da tecnologia para transformar ideias em
@@ -74,7 +90,7 @@ export default function Apresentacao() {
             </p>
 
             <Link className="themeOrange" id="btn-saiba" to="/projetos">
-              SAIBA MAIS
+              PORTIFÓLIO <img src={arrowButton} alt="seta" />
             </Link>
           </div>
 
@@ -110,8 +126,8 @@ export default function Apresentacao() {
       <Notificacao
         visivel={mostrarNotificacao}
         onFechar={() => setMostrarNotificacao(false)}
-        mensagem={mensagemNotificacao} // 👈 passa mensagem
-        imagem={imagemNotificacao}     // 👈 passa imagem
+        mensagem={mensagemNotificacao}
+        imagem={imagemNotificacao}
       />
     </main>
   );

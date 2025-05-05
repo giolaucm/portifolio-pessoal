@@ -2,6 +2,7 @@
   {
     "id": 1,
     "nome": "Blu",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Giovanna",
@@ -38,6 +39,7 @@
   {
     "id": 2,
     "nome": "PerifaCria",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Pedro",
@@ -68,6 +70,7 @@
   {
     "id": 3,
     "nome": "Avanti",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Christian",
@@ -121,6 +124,7 @@
   {
     "id": 5,
     "nome": "Entre Sonhos e Realidades",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Giovanna",
@@ -142,6 +146,7 @@
   {
     "id": 6,
     "nome": "Portifólio",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Giovanna",
@@ -163,6 +168,7 @@
   {
     "id": 8,
     "nome": "FichaChef",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Giovanna",
@@ -199,6 +205,7 @@
   {
     "id": 7,
     "nome": "Talking Care",
+    "miniBio": "Apaixonado por desenvolvimento de soluções escaláveis e inclusivas.",
     "desenvolvedores": [
       {
         "nome": "Giovanna",

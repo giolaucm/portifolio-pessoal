@@ -12,6 +12,7 @@
   body {
     font-family: var(--primary-font);
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   html, body {
@@ -51,7 +52,7 @@
   .apresentacao-cv {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
     margin-bottom: 80px;
     margin-top: 30px;
   }
@@ -75,6 +76,14 @@
     background-color: var(--primary-color);
     color: var(--quaternary-color);
     border: none;
+    gap: 10px;
+    display: flex;
+  }
+
+  #btn-saiba img {
+    width: 10px;
+    height: 10px;
+    color: var(--quaternary-color);
   }
   
   .linha {
@@ -104,12 +113,75 @@
   
   /* Botão Saiba Mais */
   #btn-saiba {
-    display: inline-block;
-    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 25px;
     font-size: 25px;
     border-radius: 50px;
     text-decoration: none;
   }
+  .typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    flex-direction: column;
+  }
+  
+  .cursor {
+    color: var(--primary-color); /* Altere aqui para a cor desejada */
+    font-weight: 500;
+  }
+  
+  .principalTitle{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid var(--primary-color); /* Cursor fake */
+    width: 0; /* Inicia com 0 para a animação de digitação */
+    animation: typing 7s steps(30) 1s forwards, hide-cursor 7s 7s forwards; /* Suaviza a digitação e remove o cursor ao final */
+  }
+
+  
+  /* Animação para simular a digitação do texto */
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 12.5em; /* Ajuste o valor conforme o comprimento do texto */
+    }
+  }
+  
+  /* Animação do cursor piscando */
+  @keyframes blink-caret {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Animação para esconder o cursor após o texto ser digitado */
+  @keyframes hide-cursor {
+    0% {
+      border-right: 0.15em solid var(--primary-color); /* Cursor visível */
+    }
+    100% {
+      border-right: none; /* Remove a barra do cursor */
+    }
+  }
+  
+  /* Animação para mostrar o texto */
+  .show-text {
+    animation: typing 7s steps(30) 1s forwards, hide-cursor 7s 7s forwards;
+  }
+  
+  
   
   /* Redes Sociais */
   .apresentacao-redes {
@@ -129,13 +201,28 @@
     width: 45%;
     display: flex;
     justify-content: center;
+    position: relative;
+    box-sizing: border-box;
   }
   
   .apresentacao-imagem {
     width: 100%;
     max-width: 600px;
     height: auto;
+    animation: flutuar 4s ease-in-out infinite;
+    will-change: transform;
   }
+  
+  /* Animação personalizada */
+  @keyframes flutuar {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.03);
+    }
+  }
+  
   
   #btn-copy,
   #btn-cv {
@@ -164,6 +251,7 @@
   /* Responsividade */
 
   @media (max-width: 1600px) {
+
   
     .apresentacao-texto h1 {
       font-size: 2rem;
@@ -176,23 +264,36 @@
     #btn-email {
       width: 50%;
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-align: initial;
     }
 
     #btn-copy,
     #btn-cv {
       height: 20px;
-      font-size: 14px;
-      padding: 20px 25px;
+      font-size: 0.8rem;
+      padding: 18px 18px;
     }
 
     #btn-saiba {
-      width: auto;
-      padding: 15px 30px;
+      width: 160px;
       height: 50px;
       font-size: 1rem;
+      padding: 20px 20px;
+      transform-style: preserve-3d;
+      animation: afastarEvoltar 4s ease-in-out infinite;
     }
+    
+    @keyframes afastarEvoltar {
+      0%, 100% {
+        transform: perspective(300px) translateZ(0);
+      }
+      50% {
+        transform: perspective(300px) translateZ(-20px);
+      }
+    }
+    
+    
 
     .apresentacao-redes p {
       font-size: 16px;
@@ -273,7 +374,7 @@
     #btn-cv {
       height: 20px;
       font-size: 14px;
-      padding: 20px 25px;
+      padding: 25px 25px;
     }
 
     .btns {
