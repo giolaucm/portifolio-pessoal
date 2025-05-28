@@ -7,7 +7,7 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "", // Alterado de 'textarea' para 'message' para consistência com a API
+    message: "",
   });
 
   const [notificacaoVisivel, setNotificacaoVisivel] = useState(false);
@@ -20,8 +20,7 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validação básica no frontend
+
     if (!formData.name || !formData.email || !formData.message) {
       setMensagemNotificacao("Por favor, preencha todos os campos");
       setNotificacaoVisivel(true);
@@ -31,10 +30,11 @@ const Form = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/index", {
+      const response = await fetch("https://formspree.io/f/mldbkkkp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -43,9 +43,11 @@ const Form = () => {
 
       if (response.ok) {
         setFormData({ name: "", email: "", message: "" });
-        setMensagemNotificacao(data.message || "Mensagem enviada com sucesso!");
+        setMensagemNotificacao("Mensagem enviada com sucesso!");
       } else {
-        setMensagemNotificacao(data.message || "Erro ao enviar mensagem");
+        setMensagemNotificacao(
+          data.errors?.[0]?.message || "Erro ao enviar mensagem"
+        );
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);

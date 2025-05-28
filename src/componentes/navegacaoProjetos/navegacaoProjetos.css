@@ -25,7 +25,6 @@
     margin: 0 0.5rem;
 }
 
-/* Efeito da linha inferior RESTAURADO */
 .projetos-nav-btn.ativo::after {
     content: '';
     position: absolute;
@@ -38,86 +37,10 @@
     transition: transform 0.3s ease;
 }
 
-/* Efeito hover RESTAURADO */
 .projetos-nav-btn:hover,
 .projetos-nav-btn.ativo {
     color: var(--quaternary-color);
 }
-
-.projeto-card {
-    flex: 0 1 calc(45% - 1rem);
-    min-width: 300px;
-    max-width: 450px;
-    height: 450px;
-    padding: 1rem;
-    border-radius: 15px;
-    background-color: black;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin: 0.5rem;
-    position: relative;
-    overflow: hidden;
-    color: white;
-    text-decoration: none;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Conteúdo que aparece no hover */
-  .projeto-info {
-    position: absolute;
-    inset: 0;
-    background: rgba(243, 159, 90, 0.8);
-    color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    padding: 1rem;
-  }
-  
-  .projeto-card:hover .projeto-info {
-    opacity: 1;
-  }
-  
-  .projeto-info h3 {
-    margin: 0.5rem 0;
-    font-size: 2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: var(--secondary-color);
-  }
-  
-  .projeto-info p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-  }
-  
-  .btn-ver {
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-    background-color: var(--secondary-color);
-    border: none;
-    color: white;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-    width: auto;
-    height: 50px;
-  }
-  
-  .btn-ver:hover {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-  }
-  
 
 /* Cards Container */
 .cards-container {
@@ -125,39 +48,98 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    padding: 2rem 5%;
     height: 100%;
     box-sizing: border-box;
 }
 
 .projeto-card {
-    flex: 0 1 calc(45% - 1rem);
+    flex: 0 1 calc(50% - 2rem);
     min-width: 300px;
-    max-width: 450px;
-    height: 450px;
+    max-width: 380px;
+    height: 250px;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: black;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.3s;
     margin: 0.5rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-decoration: none;
 }
 
-.projeto-card:hover {
-    background-color: #ccc  ;
-}
-/* Efeito hover mantido */
 .projeto-card:hover {
     transform: translateY(-0.5rem);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ccc;
+}
+
+/* Conteúdo que aparece no hover */
+.projeto-info {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(243, 159, 90, 0.8) 40%, transparent 100%);
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: initial;
+  text-align: initial;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 1rem;
 }
 
 
+.projeto-card:hover .projeto-info {
+    opacity: 1;
+}
+
+.projeto-info h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    color: var(--secondary-color);
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: transparent;
+  justify-content: initial;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.category-item {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--quaternary-color);
+  background-color: var(--tertiary-color);
+  padding: 0.2rem 0.7rem;
+  border-radius: 30px;
+}
+
+
+.projeto-info p {
+    font-size: 1rem;
+    font-weight: 350;
+}
+
+.btn-ver:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
 
 /* Paginação */
-
 .paginacao-seta {
     width: 25px;
     height: 25px;
@@ -166,7 +148,6 @@
     vertical-align: middle;
 }
 
-/* Container da paginação */
 .pagination {
     display: flex;
     justify-content: center;
@@ -176,7 +157,6 @@
     flex-wrap: wrap;
 }
 
-/* Estilização dos links (números da página) */
 .pagination li {
     list-style: none;
 }
@@ -197,29 +177,24 @@
     padding: 20px 20px;
 }
 
-/* Hover */
 .pagination a:hover {
     background-color: var(--quaternary-color);
 }
 
-/* Página ativa */
 .pagination .selected a {
     background-color: var(--quaternary-color);
 }
 
-/* Página desabilitada */
 .pagination .disabled a {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-
 /* Responsividade */
 @media (min-width: 1700px) {
-
     .projeto-card {
-        width: 40%;
-        height: 450px;
+        width: 30%;
+        height: 300px;
     }
 
     .projetos-nav-btn {
@@ -229,10 +204,16 @@
 }
 
 @media (max-width: 1400px) {
-
     .projetos-nav-btn {
         font-size: 1rem;
         width: auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .projeto-card {
+        flex: 0 1 calc(100% - 2rem);
+        height: 280px;
     }
 }
 
@@ -241,15 +222,15 @@
         font-size: 1.1rem;
         padding: 0.6rem 1rem;
     }
-    
+
     .cards-container {
         gap: 2rem;
         padding: 1rem;
     }
-    
+
     .projeto-card {
         flex-basis: 100%;
-        height: 400px;
+        height: 300px;
         max-width: 100%;
         margin: 0.5rem;
     }
@@ -260,15 +241,15 @@
         gap: 0.5rem;
         flex-direction: row;
     }
-    
+
     .projetos-nav-btn {
         font-size: 1rem;
         padding: 0.5rem;
         margin: 0 0.2rem;
     }
-    
+
     .projeto-card {
-        height: 350px;
+        height: 280px;
         padding: 1.5rem;
     }
 }

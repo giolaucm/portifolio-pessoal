@@ -30,7 +30,11 @@ function NavegacaoProjetos() {
   const projetosFiltrados =
     categoriaAtiva === "Todos"
       ? projects
-      : projects.filter((projeto) => projeto.categoria === categoriaAtiva);
+      : projects.filter((projeto) =>
+          Array.isArray(projeto.categoria)
+            ? projeto.categoria.includes(categoriaAtiva)
+            : projeto.categoria === categoriaAtiva
+        );
 
   const offset = currentPage * itemsPerPage;
   const currentProjects = projetosFiltrados.slice(
@@ -76,17 +80,29 @@ function NavegacaoProjetos() {
               data-aos-delay="200"
             >
               <div className="projeto-info">
+                <div className="category">
+                  {Array.isArray(projeto.categoria)
+                    ? projeto.categoria.map((categoria, index) => (
+                        <span key={index} className="category-item">
+                          {categoria}
+                        </span>
+                      ))
+                    : <span className="category-item">{projeto.categoria}</span>}
+                </div>
                 <h3>{projeto.nome}</h3>
                 <p>{projeto.miniBio}</p>
-                <button className="btn-ver">Ver</button>
               </div>
             </Link>
           ))}
         </div>
 
         <ReactPaginate
-          previousLabel={<img src={setaEsquerda} alt="Anterior" className="paginacao-seta" />}
-          nextLabel={<img src={setaDireita} alt="Próximo" className="paginacao-seta" />}
+          previousLabel={
+            <img src={setaEsquerda} alt="Anterior" className="paginacao-seta" />
+          }
+          nextLabel={
+            <img src={setaDireita} alt="Próximo" className="paginacao-seta" />
+          }
           pageCount={Math.ceil(projetosFiltrados.length / itemsPerPage)}
           onPageChange={handlePageClick}
           containerClassName={"pagination"}

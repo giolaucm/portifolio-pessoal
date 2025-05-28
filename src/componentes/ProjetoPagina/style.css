@@ -2,15 +2,13 @@
     display: column;
     padding:100px;
     gap: 50px;
-    width: 100%;
     background-color: var(--background-color);
 }
 
 .projeto-body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 50px;
-    width: 100%;
     justify-content: space-between;
 }
 

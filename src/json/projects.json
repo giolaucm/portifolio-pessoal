@@ -30,7 +30,7 @@
     "figma": "https://www.figma.com/proto/talkingcare",
     "github": "https://github.com/talkingcare",
     "tecnologias": ["React", "Node.js", "MongoDB"],
-    "categoria": "Hackathons",
+    "categoria": ["Hackathons", "Design"],
     "img1": "talkingcare1.png",
     "img2": "talkingcare2.png",
     "img3": "talkingcare3.png",

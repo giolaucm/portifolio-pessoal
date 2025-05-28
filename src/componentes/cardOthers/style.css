@@ -2,16 +2,16 @@
     display: flex;
     background-color: white;
     border-radius: 25px;
-    flex-direction: column;
+    flex-direction: row;
     gap: 50px;
     padding: 30px;
-    width: auto; /* <- fixo agora */
+    width: 100%; /* <- fixo agora */
     box-sizing: border-box;
 }
 
 .card-items {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 50px;
     width: 100%;
 }
@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    width: 600px;
+    width: 100%;
 
 }
 

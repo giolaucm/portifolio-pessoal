@@ -6,7 +6,7 @@ import Card from '../projeto-cards/index';
 
 function ProjetosLista() {
     return (
-        <main className="padding-all projetos-container">
+        <main className="projetos-container">
 
             <div className="projetos-titulo">
                 <p className="subtitulo themePurple">Meus projetos</p>
